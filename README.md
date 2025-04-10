@@ -40,7 +40,11 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Dataset Content
 
+<<<<<<< HEAD
 - The dataset is sourced from [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves. We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+=======
+- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+>>>>>>> 9ad18f6 (Initial commit)
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## Business Requirements
@@ -49,6 +53,7 @@ The cherry plantation crop from Farmy & Foods is facing a challenge where their 
 
 To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
 
+<<<<<<< HEAD
 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew
 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
@@ -78,11 +83,20 @@ To save time in this process, the IT team suggested an ML system that detects in
           time of training. This performance analysis is called the generalization of the model.
       -   If we get the desired generalized performance, we take these models further for the deployment, otherwise we go for the optimization process
 
+=======
+- 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
+- 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+## Hypothesis and how to validate?
+
+- List here your project hypothesis(es) and how you envision validating it (them).
+>>>>>>> 9ad18f6 (Initial commit)
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 - List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
+<<<<<<< HEAD
 ## ML Business Case Assessment 
 
 Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
@@ -413,6 +427,23 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 3. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 
 
+=======
+## ML Business Case
+
+- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+
+## Dashboard Design
+
+- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
+- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+
+## Unfixed Bugs
+
+- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+
+## Deployment
+
+>>>>>>> 9ad18f6 (Initial commit)
 ### Heroku
 
 - The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
@@ -533,3 +564,24 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   1. Lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
   2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
   3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
+- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+
+## Credits
+
+- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
+- You can break the credits section up into Content and Media, depending on what you have included in your project.
+
+### Content
+
+- The text for the Home page was taken from Wikipedia Article A.
+- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+
+### Media
+
+- The photos used on the home and sign-up page are from This Open-Source site.
+- The images used for the gallery page were taken from this other open-source site.
+
+## Acknowledgements (optional)
+
+- Thank the people who provided support throughout this project.
