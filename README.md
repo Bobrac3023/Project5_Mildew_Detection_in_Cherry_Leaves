@@ -64,8 +64,56 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 - In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
 
-## Dashboard Design
+## Dashboard Design (Streamlit App User Interface)
 
+
+### Page 1: Quick Project Summary
+
+
+#### General Information
+
+Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
+
+The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
+
+Currently, the process is to manually verify if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If it has powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located in multiple farms across the country. As a result, this manual process is not scalable due to time spent in the manual process inspection.
+
+To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project to all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+
+#### The business requirements are:
+
+- The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+- The client is interested in predicting if a cherry tree is healthy or contains powdery mildew.
+
+#### Deliverables 
+
+- Deliver a dashboard that meets the above requirements.
+
+### Page 2: Cells Visualizer
+
+* It will answer business requirement 1
+   - Checkbox 1 - Difference between average and variability image for each class ( healthy and powdery mildew)
+   - Checkbox 2 - The differences between average healthy and average powdery mildew cherry leaves
+   - Checkbox 3 - An image montage for each class.
+
+### Page 3: Healthy or Powdery Detector
+
+- Business requirement 2 information - "an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew."
+- A link to download a set of cherry leaf images for live prediction (https://www.kaggle.com/datasets/codeinstitute/cherry-leaves).
+- A User Interface with a file uploader widget. The user should have the capacity to upload multiple images. For each image, it will display the image and a prediction statement, indicating if a cherry leaf is healthy or contains powdery mildew and the probability associated with this statement.
+- A table with the image name and prediction results, and 
+- A download button to download the table.
+  
+
+### Page 4: Project Hypothesis and Validation
+
+- Block for each project hypothesis, describe the conclusion and how you validated.
+  
+### Page 5: ML Performance Metrics
+
+- Label Frequencies for Train, Validation and Test Sets
+- Model History - Accuracy and Losses
+- Model evaluation result
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
 - Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
 
