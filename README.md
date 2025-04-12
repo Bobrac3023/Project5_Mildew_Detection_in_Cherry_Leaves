@@ -40,7 +40,7 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Dataset Content
 
-- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+- The dataset is sourced from [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves. We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 - The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## Business Requirements
@@ -116,6 +116,21 @@ To save time in this process, the IT team suggested an ML system that is capable
 - Model evaluation result
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
 - Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+
+## Data Collection Notebook 
+
+- The Data Collection notebook corresponds to the **Data Understanding** section of the **CRISP-DM** methodology
+- The notebook relies on the Data undrstanding step, beacuse we are still colelcting the data for further analysis
+- There are Key steps here 
+  - Download the dataset from the Kaggle website - https://www.kaggle.com/codeinstitute/cherry-leaves
+  - Inspect and process the data 
+  - Push data to the Repo
+- Step 1 
+- In this project the dataset is provide by Code Institue at the Kaggle website in the form of a downloadable ZIP file. 
+- Link to the site here https://www.kaggle.com/codeinstitute/cherry-leaves
+- As such we do not need to make an API call to the Kaggle Website and hence the process of downlaoding the Kaggle Jason file to make an API call ( authentication and authorisation) is omitted 
+- The raw dataset is a ZIP file and once downloaded the Jupyter notebook , relevant commands as outlined in the notebook are run to unzip the file 
+- 
 
 ## Unfixed Bugs
 
