@@ -117,20 +117,105 @@ To save time in this process, the IT team suggested an ML system that is capable
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
 - Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
 
-## Data Collection Notebook 
+# MACHINE LEARNING PIPELINE 
 
-- The Data Collection notebook corresponds to the **Data Understanding** section of the **CRISP-DM** methodology
-- The notebook relies on the Data undrstanding step, beacuse we are still colelcting the data for further analysis
-- There are Key steps here 
-  - Download the dataset from the Kaggle website - https://www.kaggle.com/codeinstitute/cherry-leaves
-  - Inspect and process the data 
-  - Push data to the Repo
-- Step 1 
-- In this project the dataset is provide by Code Institue at the Kaggle website in the form of a downloadable ZIP file. 
-- Link to the site here https://www.kaggle.com/codeinstitute/cherry-leaves
-- As such we do not need to make an API call to the Kaggle Website and hence the process of downlaoding the Kaggle Jason file to make an API call ( authentication and authorisation) is omitted 
-- The raw dataset is a ZIP file and once downloaded the Jupyter notebook , relevant commands as outlined in the notebook are run to unzip the file 
-- 
+# DATA COLLECTION NOTEBOOK 
+
+### Objectives
+
+* Fetch data from Kaggle dataset . The datasource for this project has been provided by cCode institute at https://www.kaggle.com/datasets/codeinstitute/cherry-leaves in the form a zip file 
+* Extract the Zip file , and prepare it for further Machine Learning analysis 
+* Save the file in out/dataset/ folder and push it to the repo 
+  
+
+### Inputs
+
+* The input for this notebook is a Kaggle dataset from Code Insittute at https://www.kaggle.com/datasets/codeinstitute/cherry-leaves
+* This zip file is saved and extracted at input/datase/cherry_leaves/folder 
+* There are Two  file - Healthy and power_mildew
+
+### Outputs
+
+* The output will stored in the output/dataset folder and pushed to the gitpod repo.  
+
+### Additional Comments
+
+* In case you have any additional comments that don't fit in the previous bullets, please state them here. 
+
+
+
+# DATA VISUALIZATION NOTEBOOK 
+
+### Objectives
+
+* This note book helps meet the clients business requirements 1 as listed below  
+  - Average images and variability images for each class (healthy or powdery mildew). 
+    - In general the mean and standard deviation is called avergae and variablity. 
+    - This will help us meet the Checkbox 1 of Page 2 on our Steamlit Dashboard App
+  - The differences between average healthy and average powdery mildew cherry leaves. 
+    - This will help us meet the Checkbox 2 of Page 2 on our Steamlit Dashboard App. 
+    - We can see three images - Average healthy, Avergae Powdery and Difference in healthy and powdery
+  - An image montage for each class - healthy and Powdery Mildew cherry leaves
+    - In the Streamlit Dasboard app under Page 2 the client can select a labeel - Healthy or Powdery Mildew
+    - This will allow the client to create a montage of ramdom pro-labelled images from the selected images for the selected label.
+    - Every time the client clicks the **Create Montage** button, it generates a new montage of random images 
+  
+
+### Inputs
+
+* The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
+  - Train Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/train
+  - Test Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/test
+  - Validate Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/validation
+  
+
+### Outputs
+
+* The output will as below 
+  - Image shape embedding pickle file 
+  - Mean and Variability of imagess per label plot 
+  - Plot to distinguish contrast between parasite-contained and uninfected cell images
+  - Generate code that answers business requirement 1 and can be used to build image montage on Streamlit dashboard
+
+### Importance of this notebook
+
+  - This exercise is important to visually differentiate images of one class from another.
+  - data visualization for image data is usually limited to creating animage montage to visually differentiate between different pre-labeled images.
+  - Understanding the statistical difference between the mean and variability of the images of different classes helps you to anticipate the quality of data for model training.
+
+# MODELLING AND EVALUATION NOTEBOOK 
+
+### Objectives
+
+* This note book helps meet the clients business requirements 2 as listed below  
+  - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+
+### Inputs
+
+* The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
+  - Train Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/train
+  - Test Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/test
+  - Validate Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/validation
+  - image shape embeddings
+  
+
+### Outputs
+
+* The output will as below 
+  - Images distribution plot in train, validation, and test set 
+  - Image augmentation 
+  - Class indices to change prediction inference in labels
+  - Machine learning model creation and training
+  - Save model
+  - Learning curve plot for model performance 
+  - Model evaluation on pickle file
+  - Prediction on the random image file
+
+### Importance of this notebook
+
+  - Image augmentation increases the training image data by artificially and temporarily creating training images through different processes,
+or a combination of multiple processes, such as random rotation, shifts, shear, and flips, etc, in the computer’s short term memory.
 
 ## Unfixed Bugs
 
