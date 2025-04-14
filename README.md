@@ -118,6 +118,14 @@ To save time in this process, the IT team suggested an ML system that is capable
 - Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
 
 # MACHINE LEARNING PIPELINE 
+   - A typical workflow used for supervised learning is: 
+     - Split the dataset into train and test set
+     - Fit the model (either using a pipeline or not)
+     - Evaluate your model. 
+       - If performance is not good,revisit the process, 
+         - start from data collection
+         - Conduct EDA (Exploratory Data Analysis) etc.
+  
 
 # DATA COLLECTION NOTEBOOK 
 
