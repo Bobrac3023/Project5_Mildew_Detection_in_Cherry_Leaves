@@ -1,0 +1,6 @@
+input/dataset/cherry-leaves/test
+input/dataset/cherry-leaves/train
+dev_requirements.txt
+*.ipynb
+*.webp
+kaggle.json
