@@ -24,8 +24,7 @@ elif selection == "Mildew_powdery detection":
     mildew_powdery_detection()
 elif selection == "Project hypothesis validation":
     project_hypothesis_validation()
-elif selection == " Project performance metrics":
+elif selection == "Project performance metrics":
     project_performance_metrics()
 
-
-app.run()  # Run the app
+    #app.run()  # Run the app

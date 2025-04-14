@@ -95,3 +95,6 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
   else:
     print("The label you selected doesn't exist.")
     print(f"The existing options are: {labels}")
+
+if __name__ == "__main__":
+    cherry_leaves_visualizer()
