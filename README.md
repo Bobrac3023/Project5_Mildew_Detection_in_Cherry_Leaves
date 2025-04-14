@@ -49,26 +49,93 @@ The cherry plantation crop from Farmy & Foods is facing a challenge where their 
 
 To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
 
-- 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
-- 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+- The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew
+- The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 ## Hypothesis and how to validate?
 
-- List here your project hypothesis(es) and how you envision validating it (them).
+  ## Project Hypothesis
+  1. The goal of the client was to make sure that they do not supply the market with a product of compromised quality 
+  2. During our business assessment phase we understood that using conventional data analysis, it was possible to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+  3. The client had two clear business requirements.
+      -   Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+      -   Predict if a cherry leaf is healthy or contains powdery mildew.
+  4. The client wants a dashboard that provides both a non-technical and technical output
+  ## Approach for Validation
+  1. The machine learning pipeline is a sequence of operations that are performed when training a machine learning model. 
+  -   We complete the following tasks in the three Jupyter notebooks configured for this repo.
+      -   Data Collection:  
+      -   Data Cleaning or Correcting
+      -   Feature Engineering ( We mention this here as there is an overlap of some tasks between feature engineering and Data Cleaning)
+      -   Data Augmentation- Convolution networks struggle to find patterns when the dataset is very limited.
+      -   We then split the data in train, test and validation sets.
+      -   We trained the data, test the output ad then validated the same 
+      -   Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. As our dataset was images , this was a natural choice.
+      -   Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
+      -   Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
+      -   A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
+      -   With machine learning models we want to analyze the performance of the model over a test set of data that the ML model has not seen at the
+          time of training. This performance analysis is called the generalization of the model.
+      -   If we get the desired generalized performance, we take these models further for the deployment, otherwise we go for the optimization process
+
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 - List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
-## ML Business Case
+## ML Business Case Assessment 
 
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
 
+**Business Issue**: 
+- The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
+  
+**Client Benefit**
+- The client will not supply the market with a product of compromised quality.
+
+**Goal** : 
+- The manual process in place today is not scalable due to time spent in inspection.
+- To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew.
+
+- **Business requirement 1**
+  - 1 Difference between average and variability image for each class ( healthy and powdery mildew)
+  - 2 The differences between average healthy and average powdery mildew cherry leaves
+  - 3 An image montage for each class.
+- **Business requirement 2** 
+  - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
+
+## Answer questions realted to the Business Assessment 
+
+1. What are the business requirements?
+   - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+   - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+2. Is there any business requirement that can be answered with conventional data analysis?
+   - Yes, we can use conventional data analysis to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+3. Does the client need a dashboard or an API endpoint?
+   - The client needs a dashboard.
+4. What does the client consider as a successful project outcome?
+   - A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+   - Also, the capability to predict if a cherry leaf is healthy or contains powdery mildew.
+5. Can you break down the project into Epics and User Stories?
+   - Information gathering and data collection.
+   - Data visualization, cleaning, and preparation.
+   - Model training, optimization and validation.
+   - Dashboard planning, designing, and development.
+   - Dashboard deployment and release.
+6. Ethical or Privacy concerns?
+   - The client provided the data under an NDA (non-disclosure agreement), therefore the data should only be shared with professionals that are officially involved in the project.
+7. Does the data suggest a particular model?
+   - The data suggests a binary classifier, indicating whether a particular cherry leaf is healthy or contains powdery mildew.
+8. What are the model's inputs and intended outputs?
+   - The input is a cherry leaf image and the output is a prediction of whether the cherry leaf is healthy or contains powdery mildew.
+9. What are the criteria for the performance goal of the predictions?
+   - We agreed with the client a degree of 97% accuracy.
+10. How will the client benefit?
+    - The client will not supply the market with a product of compromised quality.
+  
 ## Dashboard Design (Streamlit App User Interface)
 
-
-### Page 1: Quick Project Summary
-
+### Page 1: Executive_Project Summary
 
 #### General Information
 
@@ -89,43 +156,49 @@ To save time in this process, the IT team suggested an ML system that is capable
 
 - Deliver a dashboard that meets the above requirements.
 
-### Page 2: Cells Visualizer
+### Page 2: Cherry_leaves_Visualizer
 
 * It will answer business requirement 1
    - Checkbox 1 - Difference between average and variability image for each class ( healthy and powdery mildew)
    - Checkbox 2 - The differences between average healthy and average powdery mildew cherry leaves
    - Checkbox 3 - An image montage for each class.
 
-### Page 3: Healthy or Powdery Detector
+### Page 3: Mildew_Powdery_Detection
 
-- Business requirement 2 information - "an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew."
+- It will answer business requirement 2 information.
+  - "An ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew."
 - A link to download a set of cherry leaf images for live prediction (https://www.kaggle.com/datasets/codeinstitute/cherry-leaves).
-- A User Interface with a file uploader widget. The user should have the capacity to upload multiple images. For each image, it will display the image and a prediction statement, indicating if a cherry leaf is healthy or contains powdery mildew and the probability associated with this statement.
+- A User Interface with a file uploader widget. 
+- The user should have the capacity to upload multiple images. 
+- For each image, it will display the image and a prediction statement, indicating if a cherry leaf is healthy or contains powdery mildew and the probability associated with this statement.
 - A table with the image name and prediction results, and 
 - A download button to download the table.
   
 
-### Page 4: Project Hypothesis and Validation
+### Page 4: Project_Hypothesis_Validation
 
-- Block for each project hypothesis, describe the conclusion and how you validated.
+- This is explained in detail in the section above - **Hypothesis and how to validate?**
   
-### Page 5: ML Performance Metrics
+### Page 5: Project_Performance_Metrics
 
 - Label Frequencies for Train, Validation and Test Sets
 - Model History - Accuracy and Losses
 - Model evaluation result
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+  
 
 # MACHINE LEARNING PIPELINE 
-   - A typical workflow used for supervised learning is: 
-     - Split the dataset into train and test set
-     - Fit the model (either using a pipeline or not)
-     - Evaluate your model. 
-       - If performance is not good,revisit the process, 
-         - start from data collection
-         - Conduct EDA (Exploratory Data Analysis) etc.
+- A typical workflow used for supervised learning is: 
+  - Split the dataset into train and test set
+  - Fit the model (either using a pipeline or not)
+  - Evaluate your model. 
+- If performance is not good,revisit the process, 
+  - start from data collection
+  - Conduct EDA (Exploratory Data Analysis) etc.
   
+# TOOLS AND TECHNOLOGIES
+
+Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
+These tow functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**
 
 # DATA COLLECTION NOTEBOOK 
 

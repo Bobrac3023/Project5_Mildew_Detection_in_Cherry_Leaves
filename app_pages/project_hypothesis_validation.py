@@ -11,7 +11,7 @@ def project_hypothesis_validation():
 3. The client had two clear business requirements.
     -   Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
     -   Predict if a cherry leaf is healthy or contains powdery mildew.
-4. The client wanted a dashboard that provides both a non techncial and techncial output
+4. The client wanted a dashboard that provides both a non-technical and technical output
 
 
     ## Approach for Validation
@@ -21,11 +21,11 @@ def project_hypothesis_validation():
 -   We completed the following tasks.
     -   Data Collection:  
     -   Data Cleaning or Correcting
-    -   Feature Engineering ( We mention this here as there ia an overlap of some tasks between feature engineering and Data Cleaning)
+    -   Feature Engineering ( We mention this here as there is an overlap of some tasks between feature engineering and Data Cleaning)
     -   Data Augmentation- Convolution networks struggle to find patterns when the dataset is very limited.
     -   We then split the data in train, test and validation sets.
     -   We trained the data, test the output ad then validated the same 
-    -   Convolutional neural network (CNN) model are more modern but computationa; heavy update to Artificaial Neural Networks. As our dataset was images , this was a ntural choice.
+    -   Convolutional neural network (CNN) model are more modern but computational heavy update to Artificaial Neural Networks. As our dataset was images , this was a ntural choice.
     -   Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
     -   Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
     -   A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
@@ -35,7 +35,7 @@ def project_hypothesis_validation():
 
              
     ### Findings 
-    1. The findings are captured in the out put folder and also demosntrated in the followwing tabs of the dashboard
+    1. The findings are captured in the out put folder and also demonstrated in the following tabs of the dashboard
     -   Cherry_leaves_visualizer - The three distinct requirements from Requirement 1 are captured here 
         -   Average images and variability images for each class (healthy or powdery mildew),
         -   The differences between average healthy and average powdery mildew cherry leaves,
@@ -46,12 +46,12 @@ def project_hypothesis_validation():
     ### Visual Differentiation Study
     1. The visual differentiation study revealed significant visual differences between healthy and powdery mildew-infected leaves. 
     2. Average images and variability analyses pointed towards distinctive color and texture patterns 
-    3. The powdery mildew is clearly visibilie in innfected images.
+    3. The powdery mildew is clearly visible in infected images.
 
     ### Model Training and Evaluation
     1. The CNN model trained on these visual markers achieved an very high level of accuracy with 100% correct prediction of a healthy and infected leaf.
     2. This outcome strongly supports our hypothesis that powdery mildew infection in cherry leaves can be detected using a ML system
-    3. The business goal to help the client prevent supply of infected product to the market can be acheived. 
+    3. The business goal to help the client prevent supply of infected product to the market can be achieved. 
     
     ### Conclusion
     1. What does the client consider as a successful project outcome?
