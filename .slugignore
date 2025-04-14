@@ -1,6 +1,7 @@
 input/dataset/cherry-leaves/test
 input/dataset/cherry-leaves/train
 input/dataset/cherry-leaves/validation
+/workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input
 dev_requirements.txt
 *.ipynb
 *.webp
