@@ -399,6 +399,10 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 -The Deployment on Render also did not happen as it kep giving errors for Pandas and other packages.
   - We used a lower version of Numpy than what was in my original requirements.txt file , deleted Procfile and runtime.txt files and used a Python version of 3..8.12 as outlined in the code institue deployment guide.
+
+- Render Deploy issues 
+  
+  ![render_deploy_issue](Readme.doc/render_deploy_issue.png)
    
 ## The ORGINAL INPUT Files have been erased to meet Project Deadline to submit this project. As such some of the STREAMLIT features dont work from HEROKU. BUT the same can be seen once the DataCollection Notebook is run again and the command **streamlit run app.py** is run from the visual studio console
 
@@ -526,6 +530,6 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Acknowledgements 
 
-  1. lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
+  1. Lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
   2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
   3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
