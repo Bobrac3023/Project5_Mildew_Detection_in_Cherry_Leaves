@@ -287,7 +287,8 @@ To save time in this process, the IT team suggested an ML system that is capable
 
 ### Additional Comments
 
-* In case you have any additional comments that don't fit in the previous bullets, please state them here. 
+* Data Collection is part of the Data Understanding section of the CRISP-DM methodology.
+* This is the second most important step of the CRISP-DM methodology after understanding the business requirements. 
 
 
 
@@ -368,11 +369,45 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   
 ![data_augmentation](Readme.doc/data_augmentation.png)
 
+- Choice of the Algorithm 
+
+![algorithm_selection](Readme.doc/algorithm_selection.png)
+
+- Overfitting Model 
+  
+![overfitting_model](Readme.doc/overfitting_model.png)
+
 ## Unfixed Bugs
 
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+- A lot of issues was encountered while working on this project.
+- The Walkthrough project and code is built on python 2.8 and the code institite template has 3.12 as the latest version.
+- While deploying to Heroku, the slug was over 500 MB which prevented from deploying on Heroku with all relevant files and libraries.
+- In order to deploy on Heroku many deletions were made 
+  - streamlit==1.40.2
+  - Pillow==10.0.1
+  - numpy==1.26.1
+  - tensorflow-cpu==2.16.1
+  - matplotlib==3.8.0
+  - pandas==2.1.1
+  - seaborn==0.13.2
+  - The input directories which inlcude the test, train and validation sets were deleted to reduce the slug file size. 
+  - As such the Heroku app deployed does not have the input/validation files which are need to display some features on the streamlit app. 
+- When this issue was raised to the tutor, they acknolwedged this problem and requested to change to Render. 
+- A screenshot of the issue with Heroku.
+  
+  ![heroku_slug_fail](Readme.doc/heroku_slug_fail.png) 
+
+-The Deployment on Render also did not happen as it kep giving errors for Pandas and other packages.
+  - We used a lower version of Numpy than what was in my original requirements.txt file , deleted Procfile and runtime.txt files and used a Python version of 3..8.12 as outlined in the code institue deployment guide.
+   
+## The ORGINAL INPUT Files have been erased to meet Project Deadline to submit this project. As such some of the STREAMLIT features dont work from HEROKU. BUT the same can be seen once the DataCollection Notebook is run again and the command **streamlit run app.py** is run from the visual studio console
 
 ## Deployment
+
+1. The Heroku site has a limitation of 500MB on the slug file. 
+2. Code Institute also suggests using an alternate site called Render.com https://dashboard.render.com/web/new
+3. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
+
 
 ### Heroku
 
@@ -411,6 +446,9 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
     - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
     - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
     - TensofrFlow Loass and Optimzation 
+    - Convolution Model Screenshot
+  
+  ![cnn_model](Readme.doc/cnn_model.png)
   
   ## Model creation
 
@@ -441,11 +479,21 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
   - This is the page 2 and captures the Requirements 1
   
- ![data_augmentation](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
+ ![streamlit_page2_cherry_leaves_visualizer](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
+
+  - ![average_variability](Readme.doc/average_variability.png)
 
   - This is the page 3 and captures the Requirements 2  
 
  ![streamlit_page3_mildew_powdery_detection](Readme.doc/streamlit_page3_mildew_powdery_detection.png)
+
+  - Healthy Leaf
+
+   ![healthy_leaf](Readme.doc/healthy_leaf.png)
+
+   - Mildew Powdery - Fungal Infection
+  
+   ![fungal_powdery](Readme.doc/fungal_powdery.png)
 
   - This is the page 4 and outlines the project hypothesis 
   
@@ -465,6 +513,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   5. A lot of inspiration and guidance on Streamlit app buildup was taken from Jordon Fletorides a fellow student through his project link https://github.com/jflets/ml-mildew-detector/blob/main/app_pages/page_mildew_detection.py
   6. Pandas - https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
   7. Keras Augmentation : https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
+  8. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 
 
 ### Content
