@@ -186,7 +186,8 @@ To save time in this process, the IT team suggested an ML system that is capable
 - Model evaluation result
   
 
-# MACHINE LEARNING PIPELINE 
+# MACHINE LEARNING PIPELINE
+
 - A typical workflow used for supervised learning is: 
   - Split the dataset into train and test set
   - Fit the model (either using a pipeline or not)
@@ -194,13 +195,78 @@ To save time in this process, the IT team suggested an ML system that is capable
 - If performance is not good,revisit the process, 
   - start from data collection
   - Conduct EDA (Exploratory Data Analysis) etc.
-  
-# TOOLS AND TECHNOLOGIES
+  - The Machine learning pipeline can be broken down into three sections as can be seen in the image below.These sections are also used when creating the three Jupyter notebooks
+  ![machine_learning_pipeline](Readme.doc/machine_learning_pipeline.png)
 
-Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
-These tow functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**
+# INFRASTRUTURE TOOLS AND TECHNOLOGIES
+
+- Programming Language - Python 
+- Cloud IDE ( for ediotrs and sourcee control )- We use Github and Jupyter.
+- loud IDE help us in the CRISP-DM process to complete Data colelction, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
+- Dashboard : Streamlit
+- Cloud Hosting - Heroku or Render
+- Kaggle - This is the location for the images dataset provide by the client 
+  - [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves 
+- Python Data Analysis Packakges: Captured in the Requirements.txt file and imported inside the Jupyter notebooks
+  - numpy==1.26.1
+  - pandas==2.1.1
+  - matplotlib==3.8.0
+  - seaborn==0.13.2
+  - plotly==5.17.0
+  - Pillow==10.0.1
+  - streamlit==1.40.2
+  - joblib==1.4.2
+  - scikit-learn==1.3.1
+  - tensorflow-cpu==2.16.1
+  - keras>=3.0.0
+ -  Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
+    -  A Convolution Neural Netowrk is commonly used for image processing and computer vision.
+    -  As our dataset was images , this was a natural choice.
+    -  Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
+- These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
+    - Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
+    - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
+    - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
+    - TensofrFlow Loass and Optimzation 
+  
+  ![tensorflow_loss_optimizer](Readme.doc/tensorflow_loss_optimizer.png) 
+
+  - Cloudbased IDE used for this project 
+  
+  ![cloud_based_ide_details](Readme.doc/cloud_based_ide_details.png)
+  
+# CRISP-DM
+
+- CRISP-DM is the Cross Industry  Standard Process for Data Mining. 
+- Through this project we have used this standard while building our three Jupyter notebooks.
+  - DataCollection Notebook 
+  - DataVisualization Notebook
+  - Modelling and Evaluation Notebook
+- The CRISP-DM model and the different steps of the model are capture in the images below 
+  
+  ![crisp_dm_1](Readme.doc/crisp_dm_1.png)
+   
+- Business Understanding 
+  
+![business_understaning_2](Readme.doc/business_understaning_2.png) 
+
+- Data Understanding
+  
+![data_understanding_3](Readme.doc/data_understanding_3.png)
+
+- Data Preparation
+  
+![data_preparation_4](Readme.doc/data_preparation_4.png) 
+
+- Modelling
+  
+![modelling5](Readme.doc/modelling5.png) 
+
 
 # DATA COLLECTION NOTEBOOK 
+
+- Data Collection is part of the Data Understanding Step of the CRISP-DM Methodology . 
+
 
 ### Objectives
 
@@ -213,7 +279,7 @@ These tow functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS
 
 * The input for this notebook is a Kaggle dataset from Code Insittute at https://www.kaggle.com/datasets/codeinstitute/cherry-leaves
 * This zip file is saved and extracted at input/datase/cherry_leaves/folder 
-* There are Two  file - Healthy and power_mildew
+* There are Two  file folders- Healthy and Power_mildew
 
 ### Outputs
 
@@ -298,6 +364,10 @@ These tow functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS
   - Image augmentation increases the training image data by artificially and temporarily creating training images through different processes,
 or a combination of multiple processes, such as random rotation, shifts, shear, and flips, etc, in the computer’s short term memory.
 
+- Data Augmentation Image 
+  
+![data_augmentation](Readme.doc/data_augmentation.png)
+
 ## Unfixed Bugs
 
 - You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
@@ -319,24 +389,94 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+- All details are captured under relevant sections of each jupyter notebook 
+- Python Data Analysis Packakges: Captured in the Requirements.txt file and imported inside the Jupyter notebooks
+  - numpy==1.26.1
+  - pandas==2.1.1
+  - matplotlib==3.8.0
+  - seaborn==0.13.2
+  - plotly==5.17.0
+  - Pillow==10.0.1
+  - streamlit==1.40.2
+  - joblib==1.4.2
+  - scikit-learn==1.3.1
+  - tensorflow-cpu==2.16.1
+  - keras>=3.0.0
+ -  Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
+    -  A Convolution Neural Netowrk is commonly used for image processing and computer vision.
+    -  As our dataset was images , this was a natural choice.
+    -  Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
+      - These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
+    - Tensor flow a popular Python package uses the Sequential Model function to model Neural Networks using different layers was deployed.
+    - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
+    - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
+    - TensofrFlow Loass and Optimzation 
+  
+  ## Model creation
+
+  
+  - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew. 
+  - This will also help us populate the **Page 3: mildew_powdery_detection** of our Streamlit Dashboard App.
+  - When need to Predict a Category , we use the ML task of Classification.
+  - In our project, we need to classify images, which is unstructured , so we use Convolutional Neural Network.
+  - Convolutional Neural Network which is more modern and computational heavy,an update to the artificial neural networks.
+  - The convolutional neural network consists of convolutional layers before the deep neural layers.
+  - Deep learning just refers to many layers of nodes inside a Convolutional Neural Network (CNN).     
+  - The image augmentation process makes our model ready for the real-time implementation of the systems.
+  - It also increases our model performance while training, via increasing the number of different combinations of pattern images in the memory of the computer.
+  - We will use the python library TesnorFlow to build and train our own deep learning model for this project.
+   - In our project, our CNN model will learn from the **dominant feature** of the pre-labeled cell images of our cherry leaves data
+   - In our project, the dominant feature is the **Mildew** in the cherry leaf image.
+   - The human behavior of **“learning from our mistakes”** inspires the optimizer and loss function mechanisms in deep neural networks.
+   - Scientists have used this principle and mathematically created an algorithm to reduce error by using **optimizers and loss functions**. 
+  -Futher details are captured under each section in the Modelling and Evaluation Jupyter Notebook.
+
+  # Streamlit APP Dashboard
+
+  Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their requirement 1 and 2 
+
+  - This is the first page and captures the executive sumamry for the client . This is for non technical users.
+    
+ ![streamlit_navigation_panel1](Readme.doc/streamlit_navigation_panel1.png)
+
+  - This is the page 2 and captures the Requirements 1
+  
+ ![data_augmentation](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
+
+  - This is the page 3 and captures the Requirements 2  
+
+ ![streamlit_page3_mildew_powdery_detection](Readme.doc/streamlit_page3_mildew_powdery_detection.png)
+
+  - This is the page 4 and outlines the project hypothesis 
+  
+ ![streamlit_project_hypothesis]](Readme.doc/streamlit_project_hypothesis.png)
+
+  - This is last page ans show the ML model performance 
+   
+ ![streamlit_project_performance_metrics](Readme.doc/streamlit_project_performance_metrics.png)
+
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+  1. A lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
+  2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
+  3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
+  4. The code was  sourced and heavily influenced by Gyan Shashwat through his Walkthrough project 1
+  5. A lot of inspiration and guidance on Streamlit app buildup was taken from Jordon Fletorides a fellow student through his project link https://github.com/jflets/ml-mildew-detector/blob/main/app_pages/page_mildew_detection.py
+  6. Pandas - https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
+  7. Keras Augmentation : https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
+
 
 ### Content
 
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+  1.All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
 
 ### Media
 
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
+  1. All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
 
-## Acknowledgements (optional)
+## Acknowledgements 
 
-- Thank the people who provided support throughout this project.
+  1. lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
+  2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
+  3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
