@@ -31,7 +31,7 @@ def cherry_leaves_visualizer():
       st.write("---")
 
     if st.checkbox("Differences between average healthy and average mildew powdery cells"):
-          diff_between_avgs = plt.imread(f"outputs/{version}difference_between_averages.png")
+          diff_between_avgs = plt.imread(f"outputs/{version}/difference_between_averages.png")
 
           st.warning(
             f"* We notice this study didn't show "
