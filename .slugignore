@@ -1,9 +1,14 @@
-input/dataset/cherry-leaves/test
-input/dataset/cherry-leaves/train
-input/dataset/cherry-leaves/validation
-workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/
-dev_requirements.txt
+# Exclude large and non-essential files from Heroku slug
+input/
+outputs/
+jupyter_notebooks/
 *.ipynb
-*.webp
-kaggle.json
-Project5_Mildew_Detection_in_Cherry_Leaves/Readme.doc
+*.zip
+*.jpg
+*.jpeg
+*.png
+*.h5
+*.pkl
+*.joblib
+.devcontainer/
+Readme.doc
