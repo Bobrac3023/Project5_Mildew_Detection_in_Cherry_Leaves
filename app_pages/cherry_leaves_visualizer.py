@@ -5,8 +5,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from matplotlib.image import imread
-from PIL import UnidentifiedImageError
+from PIL import Image, UnidentifiedImageError
 
 import streamlit as st
 
@@ -60,13 +59,18 @@ def cherry_leaves_visualizer():
     if st.checkbox("Image Montage"):
         st.write("* Click 'Create Montage' button to refresh *")
         my_data_dir = 'input/dataset/cherry-leaves'
-        labels = os.listdir(os.path.join(my_data_dir, 'validation'))
+        validation_dir = os.path.join(my_data_dir, 'validation')
+        labels = os.listdir(validation_dir)
 
-        label_to_display = st.selectbox(label="Select label", options=labels, index=0)
+        label_to_display = st.selectbox(
+            label="Select label",
+            options=labels,
+            index=0
+        )
 
         if st.button("Create Montage"):
             image_montage(
-                dir_path=os.path.join(my_data_dir, 'validation'),
+                dir_path=validation_dir,
                 label_to_display=label_to_display,
                 nrows=8,
                 ncols=3,
@@ -85,10 +89,10 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         if nrows * ncols < len(images_list):
             img_idx = random.sample(images_list, nrows * ncols)
         else:
-            print(
+            st.warning(
                 f"Decrease nrows or ncols to create your montage.\n"
-                f"There are {len(images_list)} in your subset. "
-                f"You requested a montage with {nrows * ncols} spaces."
+                f"There are {len(images_list)} images in your subset, "
+                f"but you requested {nrows * ncols} spaces."
             )
             return
 
@@ -102,12 +106,12 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         for x in range(nrows * ncols):
             try:
                 img_path = os.path.join(dir_path, label_to_display, img_idx[x])
-                img = imread(img_path)
-                img_shape = img.shape
+                img = Image.open(img_path).convert("RGB")
+                img_np = np.array(img)
 
                 ax = axes[plot_idx[plotted][0], plot_idx[plotted][1]]
-                ax.imshow(img)
-                ax.set_title(f"Width {img_shape[1]}px x Height {img_shape[0]}px")
+                ax.imshow(img_np)
+                ax.set_title(f"Width {img_np.shape[1]}px x Height {img_np.shape[0]}px")
                 ax.set_xticks([])
                 ax.set_yticks([])
 
@@ -124,8 +128,8 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
         st.pyplot(fig=fig)
 
     else:
-        print("The label you selected doesn't exist.")
-        print(f"The existing options are: {labels}")
+        st.error(f"The label '{label_to_display}' does not exist.")
+        st.info(f"Available options: {labels}")
 
 
 if __name__ == "__main__":
