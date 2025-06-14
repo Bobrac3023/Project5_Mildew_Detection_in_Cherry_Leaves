@@ -1,8 +1,9 @@
-# Exclude large and non-essential files from Heroku slug
-input/
-outputs/
-jupyter_notebooks/
+# Exclude entire dataset images folder
+input/dataset/cherry-leaves/
+
+# Exclude dev-related and heavy files
 *.ipynb
+*.webp
 *.zip
 *.jpg
 *.jpeg
@@ -10,5 +11,11 @@ jupyter_notebooks/
 *.h5
 *.pkl
 *.joblib
+
+# Exclude temp and workspace files
+dev_requirements.txt
+kaggle.json
+Project5_Mildew_Detection_in_Cherry_Leaves/Readme.doc
 .devcontainer/
+workspaces/
 Readme.doc
