@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\vscode-projects\Project5\Project5_Mildew_Detection_in_Cherry_Leaves\.venv
+set VIRTUAL_ENV=c:\Roshan Learning\Project5\Project5_Mildew_Detection_in_Cherry_Leaves\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
