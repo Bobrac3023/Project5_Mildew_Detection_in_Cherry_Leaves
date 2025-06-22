@@ -70,7 +70,7 @@ def mildew_powdery_detection():
         csv = results_df.to_csv(index=False).encode('utf-8')
         # Streamlit  native file download button
         st.download_button(
-	    label="📥 Download prediction results as CSV",
+	    label="Download prediction results as CSV",
 	    data=csv,
 	    file_name='prediction_results.csv',
 	    mime='text/csv'
