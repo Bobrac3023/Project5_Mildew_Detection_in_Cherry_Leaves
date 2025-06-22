@@ -52,7 +52,11 @@ def cherry_leaves_visualizer():
 
         st.warning(
             "* We notice this study didn't show patterns where we could "
-            "intuitively differentiate one from another."
+            "intuitively differentiate one from another.There is very " \
+            "little visual difference between the average healthy and " \
+            "powdery_mildew images.The abs(avg_healthy - avg_mildew) " \
+            "difference is numerically small — likely in the range " \
+            "of 0–10 out of 255 per pixel." 
         )
         st.image(diff_between_avgs, caption='Difference between average images')
 
