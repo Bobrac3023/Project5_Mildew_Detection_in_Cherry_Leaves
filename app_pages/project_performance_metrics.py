@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 from PIL import Image
+import joblib 
 
 def project_performance_metrics():
     st.title("Model Performance")
@@ -44,8 +45,15 @@ def project_performance_metrics():
     test_performance_path = os.path.join(model_outputs_dir, "evaluation.pkl")
     
     if os.path.exists(test_performance_path):
-        test_performance_df = pd.read_pickle(test_performance_path)
-        st.dataframe(test_performance_df)
+    try:
+        evaluation = joblib.load(test_performance_path)
+        if isinstance(evaluation, (list, tuple)) and len(evaluation) == 2:
+            df = pd.DataFrame([evaluation], columns=["Loss", "Accuracy"])
+            st.dataframe(df)
+        else:
+            st.write("Unexpected evaluation format:", evaluation)
+    except Exception as e:
+        st.error(f"Error loading evaluation file: {e}")
     else:
         st.error("Test set performance data is not available.")
 
