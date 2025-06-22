@@ -27,7 +27,7 @@ def predict_mildew(model, img_array):
     confidence_percentage = "{:.2f}%".format(confidence * 100)
     return prediction_class, confidence_percentage
 
-def resize_image(image, target_size=(256, 256)):
+def resize_image(image, target_size=(224, 224)):
     """Resizes an image to the target size."""
     return image.resize(target_size)
 
