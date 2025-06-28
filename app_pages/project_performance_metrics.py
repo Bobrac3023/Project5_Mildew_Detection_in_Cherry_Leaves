@@ -50,7 +50,7 @@ def project_performance_metrics():
     """)
 
     # Update path for test set performance metrics
-    (assuming it's saved as a .pkl for demonstration)
+
     test_performance_path = os.path.join(model_outputs_dir, "evaluation.pkl")
 
     if os.path.exists(test_performance_path):
