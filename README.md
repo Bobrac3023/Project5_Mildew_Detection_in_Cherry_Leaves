@@ -38,65 +38,131 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
 
+# Project Overview
+
+This project aims to solve a real-world agricultural challenge: identifying cherry leaves infected by powdery mildew. The goal is to replace the manual, time-consuming inspection process with a scalable, image-based machine learning solution.he cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+
+## General Background
+
+### Client:
+
+- Marianne McGuineys
+- Head of IT and Innovation
+- Farmy & Foods
+
+### Problem:
+
+- Powdery mildew has been affecting the quality of cherry leaves.
+- Manual visual inspection is slow and labor-intensive.
+- Risk of compromised products reaching the market.
+
+### Objective:
+
+- Build an ML system capable of predicting mildew infection from images
+- Create a user-friendly dashboard for visualization and prediction.
+
 ## Dataset Content
 
-<<<<<<< HEAD
-- The dataset is sourced from [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves. We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
-=======
-- The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
->>>>>>> 9ad18f6 (Initial commit)
-- The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
-
+- Source: Kaggle - Cherry Leaves Dataset sourced from kaggle https://www.kaggle.com/codeinstitute/cherry-leaves
+- Content: 4,000+ images of healthy and mildew-infected cherry leaves.
+- Structure: Pre-sorted into folders (train/, test/, validation/)
+ T
 ## Business Requirements
 
-The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
+Farmy & Foods is currently facing a critical challenge in its cherry plantations, which are increasingly affected by powdery mildew, a fungal disease that compromises crop quality. The organization’s existing inspection method is entirely manual and time-intensive—an employee spends approximately 30 minutes per tree collecting and visually analyzing leaf samples to determine if the plant is healthy or infected. If mildew is detected, a fungicide is applied, which takes an additional 1 minute per tree.
 
-To save time in this process, the IT team suggested an ML system that detects instantly, using a leaf tree image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project for all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+With thousands of cherry trees distributed across multiple farms, this process is not scalable, leading to significant operational inefficiencies and risks of delayed or inconsistent identification of infected trees.
 
-<<<<<<< HEAD
-- The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew
-- The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+To address this, the IT team proposed the implementation of a machine learning (ML) system capable of analyzing cherry leaf images and providing an instant classification of leaf health. The initiative is not only aimed at solving the current problem in cherry crops but also serves as a pilot model that can be extended to other crops facing similar pest or disease-related challenges.
 
-## Hypothesis and how to validate?
+The key business requirements for this project are as follows:
 
-  ## Project Hypothesis
-  1. The goal of the client was to make sure that they do not supply the market with a product of compromised quality 
-  2. During our business assessment phase we understood that using conventional data analysis, it was possible to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-  3. The client had two clear business requirements.
-      -   Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-      -   Predict if a cherry leaf is healthy or contains powdery mildew.
-  4. The client wants a dashboard that provides both a non-technical and technical output
-  ## Approach for Validation
-  1. The machine learning pipeline is a sequence of operations that are performed when training a machine learning model. 
-  -   We complete the following tasks in the three Jupyter notebooks configured for this repo.
-      -   Data Collection:  
-      -   Data Cleaning or Correcting
-      -   Feature Engineering ( We mention this here as there is an overlap of some tasks between feature engineering and Data Cleaning)
-      -   Data Augmentation- Convolution networks struggle to find patterns when the dataset is very limited.
-      -   We then split the data in train, test and validation sets.
-      -   We trained the data, test the output ad then validated the same 
-      -   Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. As our dataset was images , this was a natural choice.
-      -   Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
-      -   Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
-      -   A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
-      -   With machine learning models we want to analyze the performance of the model over a test set of data that the ML model has not seen at the
-          time of training. This performance analysis is called the generalization of the model.
-      -   If we get the desired generalized performance, we take these models further for the deployment, otherwise we go for the optimization process
+- **Visual Differentiation:**
+  - Develop a visual study to determine whether healthy and infected cherry leaves can be reliably distinguished using image-based features such as color, texture, and shape variations
+- **Predictive Modeling:**
+  - Design and train a robust Convolutional Neural Network (CNN) model that can accurately classify cherry leaf images into ***"Healthy"*** or ***"Powdery Mildew"*** categories. 
+  - The model should demonstrate high generalization ability on unseen test data.
+- **Dashboard Output:**
+  - Create an interactive dashboard that provides both technical metrics (accuracy, loss curves, confusion matrix) and non-technical insights (clear predictions, sample visuals) to support stakeholders with diverse backgrounds in interpreting model results.
 
-=======
-- 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
-- 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-## Hypothesis and how to validate?
+## Hypothesis and How to Validate
 
-- List here your project hypothesis(es) and how you envision validating it (them).
->>>>>>> 9ad18f6 (Initial commit)
+Based on the uploaded document (**"Jupyter notebook data.docx"**) and your pasted input, here is a professionally rewritten version of the **"Hypothesis and How to Validate"** section. This version ensures clarity, coherence, and alignment with your project implementation:
+
+---
+
+## 🧪 Hypothesis and How to Validate
+
+### Project Hypothesis
+
+- The client’s primary objective is to ensure that no compromised-quality produce is delivered to the market.
+- During the initial business assessment, it was determined that traditional visual inspection techniques could help differentiate between healthy and mildew-infected cherry leaves.
+- Two clear business requirements were established:
+  - Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+  - Develop a predictive mechanism to classify a cherry leaf as healthy or infected.
+- The client further emphasized the need for a user-friendly dashboard that delivers both technical and non-technical outputs for decision-making.
+
+### Approach for Validation
+
+To validate this hypothesis, a structured machine learning pipeline was implemented, distributed across three main Jupyter notebooks:
+
+#### Data Collection and Preparation 
+
+- The dataset used in this project consists of labeled images of cherry leaves, categorized into two classes: Healthy and Powdery Mildew Infected. 
+- These images were sourced from the https://www.kaggle.com/datasets/codeinstitute/cherry-leaves and provided by Farmy & Foods.
+
+#### Preprocessing Workflow** 
+
+To ensure the dataset was robust for model training and evaluation, the following preprocessing steps were implemented:
+
+- Data Cleaning
+  - Checked and filtered out corrupted or unreadable image files.
+  - Standardized image formats to RGB and resized all images to 224x224 pixels to ensure compatibility with the CNN model input layer.
+- Feature Engineering (Visual)
+  - Though explicit feature extraction was handled by the CNN model, visual differences such as color distribution, texture, and shape variations were explored through:
+    - Average and variability image visualizations.
+    - Pixel-level difference plots between healthy and infected leaves.
+- Data Augmentation
+  - To increase the effective training size and improve model generalization, the following augmentation techniques were applied during training:
+    - Horizontal and vertical flipping
+    - Random rotations
+    - Zoom and shift transformations
+- Dataset Splitting
+  - The cleaned and augmented dataset was split as follows:
+    - Training Set: Used for model learning.
+    - Validation Set: Used during training for tuning and early stopping.
+    - Test Set: Used post-training to evaluate model generalization on unseen data.
+
+
+#### Model Design and Training
+
+- A **Convolutional Neural Network (CNN)** architecture was selected due to its high efficacy in image classification tasks.
+- The model was built using the **TensorFlow Keras API**, leveraging:
+
+  - ***Conv2D, MaxPooling, Dropout,*** and ***Dense*** layers.
+  - Dropout layers were included to reduce overfitting.
+  - Early stopping was configured to halt training when no further improvement was observed.
+
+#### Model Evaluation
+
+- The model’s performance was evaluated on the **test set**—data unseen during training.
+- Key metrics such as **accuracy and loss** were tracked across epochs to monitor training behavior.
+- Visualization of learning curves revealed trends in model generalization.
+
+### Conclusion
+
+The hypothesis is validated if:
+
+- There are observable visual distinctions between healthy and infected leaves (confirmed via average/difference visualizations).
+- The trained model demonstrates high predictive accuracy (above 99% test accuracy).
+- The final dashboard effectively communicates both analytical and actionable insights to stakeholders.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 - List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
 
-<<<<<<< HEAD
+
 ## ML Business Case Assessment 
 
 Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
