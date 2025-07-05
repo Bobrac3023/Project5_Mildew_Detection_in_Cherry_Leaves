@@ -88,12 +88,6 @@ The key business requirements for this project are as follows:
 
 ## Hypothesis and How to Validate
 
-Based on the uploaded document (**"Jupyter notebook data.docx"**) and your pasted input, here is a professionally rewritten version of the **"Hypothesis and How to Validate"** section. This version ensures clarity, coherence, and alignment with your project implementation:
-
----
-
-## 🧪 Hypothesis and How to Validate
-
 ### Project Hypothesis
 
 - The client’s primary objective is to ensure that no compromised-quality produce is delivered to the market.
@@ -167,13 +161,16 @@ The hypothesis is validated if:
 
 Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
 
-**Business Issue**: 
+**Business Issue**:
+
 - The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
   
 **Client Benefit**
+
 - The client will not supply the market with a product of compromised quality.
 
 **Goal** : 
+
 - The manual process in place today is not scalable due to time spent in inspection.
 - To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew.
 
@@ -215,56 +212,139 @@ Marianne McGuineys, a fictional individual, is the head of IT and Innovation at 
   
 ## Dashboard Design (Streamlit App User Interface)
 
+The Streamlit Dashboard is delivered via Five Distinct app files. Together, these files form a complete, modular, and interactive machine learning dashboard for the detection of powdery mildew in cherry leaves.
+Below is a comprehensive explanation of each file, how it works individually, and how they complement each other as a cohesive project
+
 ### Page 1: Executive_Project Summary
 
-#### General Information
+- The Execuive Project Summary is delivered via the ***executive_project_summary*** file
 
-Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
+#### Purpose:
 
-The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
+- Business context, goals, and scope
 
-Currently, the process is to manually verify if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If it has powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. The company has thousands of cherry trees located in multiple farms across the country. As a result, this manual process is not scalable due to time spent in the manual process inspection.
+#### What it does (Deliverables)
 
-To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative is successful, there is a realistic chance to replicate this project to all other crops. The dataset is a collection of cherry leaf images provided by Farmy & Foods, taken from their crops.
+- Introduces the fictional stakeholder : (Marianne McGuineys) and company (Farmy & Foods).
+- Describes the problem : manual mildew detection is time-consuming and not scalable.
+- Lays out why an ML solution is appropriate.
+- Defines two business requirements:
+  - Visual differentiation between healthy and mildew-infected leaves.
+  - Predictive classification using ML.
+- Points to the Kaggle dataset used.
+- Summarizes dashboard sections like Cherry Leaves Visualizer, Mildew Detection, etc.
 
-#### The business requirements are:
+### How it complements others
 
-- The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-- The client is interested in predicting if a cherry tree is healthy or contains powdery mildew.
+- Sets the foundation for the hypothesis validation.
+- Tells the business story that is answered with the technical notebooks.
+- Describes what users will see in other modules (e.g., checkboxes, model output).
 
-#### Deliverables 
-
-- Deliver a dashboard that meets the above requirements.
 
 ### Page 2: Cherry_leaves_Visualizer
 
-* It will answer business requirement 1
-   - Checkbox 1 - Difference between average and variability image for each class ( healthy and powdery mildew)
-   - Checkbox 2 - The differences between average healthy and average powdery mildew cherry leaves
-   - Checkbox 3 - An image montage for each class.
+- The page is is delivered via the ***cherry_leaves_visualizer*** file
+
+### Purpose:
+
+- Visual study **(addresses Business Requirement 1)**
+
+### What it does (Delievarables)
+
+- Provides an **interactive UI** to explore the dataset visually:
+  - Shows **average and standard** deviation images.
+  - Displays **pixel-wise differences** between average healthy and mildew-infected leaves.
+  - Allows users to generate image montages for visual inspection by class.
+- Uses ***matplotlib, seaborn, and PIL*** for image processing.
+- Fully interactive using Streamlit checkboxes, selectbox, and image(). 
+
+### How it complements others.
+
+- Provides the visual evidence to support the hypothesis that mildew is visually identifiable.
+- Directly supports the **first business requirement** (visual differentiation).
+- The ***"Findings"*** section in project_hypothesis_validation refers to this output.
+- Data used here is the same dataset used in training the ML model.
+
 
 ### Page 3: Mildew_Powdery_Detection
 
-- It will answer business requirement 2 information.
-  - "An ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew."
-- A link to download a set of cherry leaf images for live prediction (https://www.kaggle.com/datasets/codeinstitute/cherry-leaves).
-- A User Interface with a file uploader widget. 
-- The user should have the capacity to upload multiple images. 
-- For each image, it will display the image and a prediction statement, indicating if a cherry leaf is healthy or contains powdery mildew and the probability associated with this statement.
-- A table with the image name and prediction results, and 
-- A download button to download the table.
-  
+- The page is is delivered via the ***mildew_powdery_detection*** file
+
+### Purpose: 
+
+- Real-time prediction interface **(addresses Business Requirement 2)**
+
+### What it does
+
+- Loads a trained CNN model (mildew_detection_model.h5) from disk.
+- Accepts user-uploaded images (.jpg, .jpeg, .png).
+- Predicts if the image is Healthy or Powdery Mildew using the model.
+- Displays:
+- Uploaded image.
+- Predicted class and confidence.
+- Table of results.
+- CSV download of results.
+- Uses TensorFlow, PIL, NumPy, and Streamlit components.
+
+### How it complements others
+
+- Implements Business Requirement 2.
+- Provides a live demonstration of the model's predictive power.
+- Prediction functionality validates the claim in project_hypothesis_validation that mildew is "computationally" detectable.
+- Connects user interaction to the model's training results seen in project_performance_metrics.
 
 ### Page 4: Project_Hypothesis_Validation
 
-- This is explained in detail in the section above - **Hypothesis and how to validate?**
-  
+- The page is is delivered via the ***project_hypothesis_validation*** file
+
+### Purpose: 
+
+- Summarize and validate the project hypothesis
+
+### What it does
+
+- Defines the core hypothesis: mildew is detectable both visually and via ML.
+- Explains:
+  - Business requirements.
+  - ML pipeline used (data prep, augmentation, CNN design, evaluation).
+  - Visual study outcomes.
+  - Model training and test accuracy.
+- Includes a clear conclusion and next steps:
+  - Scaling.
+  - Deployment.
+  - Generalizability to other crops.
+
+### How it complements others
+
+- Connects the visual output from cherry_leaves_visualizer.py and the model results from mildew_powdery_detection.py.
+- Ties all technical and business findings together to validate project success.
+- Serves as the bridge between executive overview and technical proof.
+
+
 ### Page 5: Project_Performance_Metrics
 
-- Label Frequencies for Train, Validation and Test Sets
-- Model History - Accuracy and Losses
-- Model evaluation result
-  
+- The page is is delivered via the ***project_performance_metrics*** file
+
+### Purpose:
+
+- Visualize model learning and evaluation
+
+### What it does
+
+- Loads model training curves (accuracy and loss PNGs).
+- Reads saved evaluation metrics (evaluation.pkl).
+- Displays:
+  - Training vs. validation accuracy/loss.
+  - Test accuracy/loss as a DataFrame.
+- Flags potential overfitting.
+- Explains model generalization performance.
+
+### How it complements others
+
+- Reinforces the findings stated in project_hypothesis_validation.py.
+- Helps non-technical users visualize what “good model performance” looks like.
+- Supports trust in the predictions shown in mildew_powdery_detection.py.
+
 
 # MACHINE LEARNING PIPELINE
 
@@ -299,17 +379,18 @@ To save time in this process, the IT team suggested an ML system that is capable
   - scikit-learn==1.3.1
   - tensorflow-cpu==2.16.1
   - keras>=3.0.0
- -  Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
-    -  A Convolution Neural Netowrk is commonly used for image processing and computer vision.
-    -  As our dataset was images , this was a natural choice.
-    -  Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
+- Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
+  - A Convolution Neural Netowrk is commonly used for image processing and computer vision.
+  - As our dataset was images , this was a natural choice.
+- Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
 - These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
-    - Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
-    - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
-    - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
-    - TensofrFlow Loass and Optimzation 
+  - Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
+  - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
+  - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
+
+- TensofrFlow Loass and Optimzation 
   
-  ![tensorflow_loss_optimizer](Readme.doc/tensorflow_loss_optimizer.png) 
+  ![tensorflow_loss_optimizer](../Project5/Project5_Mildew_Detection_in_Cherry_Leaves/Readme.doc/tensorflow_loss_optimizer.png) 
 
   - Cloudbased IDE used for this project 
   
@@ -493,7 +574,6 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 3. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 
 
-=======
 ## ML Business Case
 
 - In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
@@ -509,7 +589,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Deployment
 
->>>>>>> 9ad18f6 (Initial commit)
+
 ### Heroku
 
 - The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
