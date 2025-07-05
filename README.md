@@ -1,42 +1,5 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Cherry Leaves project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. In your newly created repo click on the green Code button. 
-
-1. Then, from the Codespaces tab, click Create codespace on main.
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
 
 # Project Overview
 
@@ -44,11 +7,11 @@ This project aims to solve a real-world agricultural challenge: identifying cher
 
 ## General Background
 
-### Client:
+### Client details:
 
 - Marianne McGuineys
-- Head of IT and Innovation
-- Farmy & Foods
+  - Head of IT and Innovation
+  - Farmy & Foods
 
 ### Problem:
 
@@ -106,7 +69,7 @@ To validate this hypothesis, a structured machine learning pipeline was implemen
 - The dataset used in this project consists of labeled images of cherry leaves, categorized into two classes: Healthy and Powdery Mildew Infected. 
 - These images were sourced from the https://www.kaggle.com/datasets/codeinstitute/cherry-leaves and provided by Farmy & Foods.
 
-#### Preprocessing Workflow** 
+#### Preprocessing Workflow 
 
 To ensure the dataset was robust for model training and evaluation, the following preprocessing steps were implemented:
 
@@ -152,9 +115,7 @@ The hypothesis is validated if:
 - The trained model demonstrates high predictive accuracy (above 99% test accuracy).
 - The final dashboard effectively communicates both analytical and actionable insights to stakeholders.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
-
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+# Rationale to map Business requirements Data Visualisations and ML tasks
 
 
 ## ML Business Case Assessment 
@@ -181,7 +142,7 @@ Marianne McGuineys, a fictional individual, is the head of IT and Innovation at 
 - **Business requirement 2** 
   - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
 
-## Answer questions realted to the Business Assessment 
+## Answer questions related to the Business Assessment 
 
 1. What are the business requirements?
    - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
@@ -388,13 +349,10 @@ Below is a comprehensive explanation of each file, how it works individually, an
   - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
   - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
 
-- TensofrFlow Loass and Optimzation 
+- TensorFlow Loass and Optimzation 
   
-  ![tensorflow_loss_optimizer](../Project5/Project5_Mildew_Detection_in_Cherry_Leaves/Readme.doc/tensorflow_loss_optimizer.png) 
+![tensorflow_loss_optimizer](Readme.doc\tensorflow_loss_optimizer.png)
 
-  - Cloudbased IDE used for this project 
-  
-  ![cloud_based_ide_details](Readme.doc/cloud_based_ide_details.png)
   
 # CRISP-DM
 
@@ -407,19 +365,19 @@ Below is a comprehensive explanation of each file, how it works individually, an
   
   ![crisp_dm_1](Readme.doc/crisp_dm_1.png)
    
-- Business Understanding 
+- **Business Understanding**
   
 ![business_understaning_2](Readme.doc/business_understaning_2.png) 
 
-- Data Understanding
-  
+- **Data Understanding**
+
 ![data_understanding_3](Readme.doc/data_understanding_3.png)
 
-- Data Preparation
+- **Data Preparation**
   
 ![data_preparation_4](Readme.doc/data_preparation_4.png) 
 
-- Modelling
+- **Modelling**
   
 ![modelling5](Readme.doc/modelling5.png) 
 
@@ -488,21 +446,21 @@ Below is a comprehensive explanation of each file, how it works individually, an
 
 ### Importance of this notebook
 
-  - This exercise is important to visually differentiate images of one class from another.
-  - data visualization for image data is usually limited to creating animage montage to visually differentiate between different pre-labeled images.
-  - Understanding the statistical difference between the mean and variability of the images of different classes helps you to anticipate the quality of data for model training.
+- This exercise is important to visually differentiate images of one class from another.
+- data visualization for image data is usually limited to creating animage montage to visually differentiate between different pre-labeled images.
+- Understanding the statistical difference between the mean and variability of the images of different classes helps you to anticipate the quality of data for model training.
 
 # MODELLING AND EVALUATION NOTEBOOK 
 
 ### Objectives
 
-* This note book helps meet the clients business requirements 2 as listed below  
-  - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+- This note book helps meet the clients business requirements 2 as listed below  
+- The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 
 ### Inputs
 
-* The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
+- The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
   - Train Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/train
   - Test Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/test
   - Validate Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/validation
@@ -541,7 +499,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 ## Unfixed Bugs
 
 - A lot of issues was encountered while working on this project.
-- The Walkthrough project and code is built on python 2.8 and the code institite template has 3.12 as the latest version.
+- The Walkthrough project and code is built on python 2.8 and the code institite template had 3.12 as the latest version.
 - While deploying to Heroku, the slug was over 500 MB which prevented from deploying on Heroku with all relevant files and libraries.
 - In order to deploy on Heroku many deletions were made 
   - streamlit==1.40.2
@@ -551,57 +509,31 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   - matplotlib==3.8.0
   - pandas==2.1.1
   - seaborn==0.13.2
-  - The input directories which inlcude the test, train and validation sets were deleted to reduce the slug file size. 
-  - As such the Heroku app deployed does not have the input/validation files which are need to display some features on the streamlit app. 
+  - The input directories which include the test, train and validation sets were deleted to reduce the slug file size. 
+  - As such the Heroku app deployed did not have the input/validation files which are need to display some features on the streamlit app. 
 - When this issue was raised to the tutor, they acknolwedged this problem and requested to change to Render. 
 - A screenshot of the issue with Heroku.
   
   ![heroku_slug_fail](Readme.doc/heroku_slug_fail.png) 
 
--The Deployment on Render also did not happen as it kep giving errors for Pandas and other packages.
+-The Deployment on Render also presented numerous challenges, as it kepy throwing errors for Pandas and other packages.
+- An example of the error below 
   - We used a lower version of Numpy than what was in my original requirements.txt file , deleted Procfile and runtime.txt files and used a Python version of 3..8.12 as outlined in the code institue deployment guide.
 
 - Render Deploy issues 
   
   ![render_deploy_issue](Readme.doc/render_deploy_issue.png)
    
-## The ORGINAL INPUT Files have been erased to meet Project Deadline to submit this project. As such some of the STREAMLIT features dont work from HEROKU. BUT the same can be seen once the DataCollection Notebook is run again and the command **streamlit run app.py** is run from the visual studio console
+
 
 ## Deployment
 
-1. The Heroku site has a limitation of 500MB on the slug file. 
-2. Code Institute also suggests using an alternate site called Render.com https://dashboard.render.com/web/new
-3. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
+- The Heroku site has a limitation of 500MB on the slug file. 
+- Code Institute also suggests using an alternate site called Render.com https://dashboard.render.com/web/new
+- Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
+- Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
 
 
-## ML Business Case
-
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
-
-## Dashboard Design
-
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
-
-## Unfixed Bugs
-
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
-
-## Deployment
-
-
-### Heroku
-
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the .slugignore file.
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -629,7 +561,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
     - TensofrFlow Loass and Optimzation 
     - Convolution Model Screenshot
   
-  ![cnn_model](Readme.doc/cnn_model.png)
+![cnn_model](Readme.doc/cnn_model.png)
   
   ## Model creation
 
@@ -687,47 +619,26 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Credits
 
-  1. A lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
-  2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
-  3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
-  4. The code was  sourced and heavily influenced by Gyan Shashwat through his Walkthrough project 1
-  5. A lot of inspiration and guidance on Streamlit app buildup was taken from Jordon Fletorides a fellow student through his project link https://github.com/jflets/ml-mildew-detector/blob/main/app_pages/page_mildew_detection.py
-  6. Pandas - https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
-  7. Keras Augmentation : https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
-  8. Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
+- A lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
+- Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
+- My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
+- The code was  sourced and heavily influenced by Gyan Shashwat through his Walkthrough project 1
+- A lot of inspiration and guidance on Streamlit app buildup was taken from Jordon Fletorides a fellow student through his project link https://github.com/jflets/ml-mildew-detector/blob/main/app_pages/page_mildew_detection.py
+- Pandas - https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
+- Keras Augmentation : https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
+- Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 
 
 ### Content
 
-  1.All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
+- All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
 
 ### Media
 
-  1. All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
+- All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
 
 ## Acknowledgements 
 
-  1. Lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
-  2. Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
-  3. My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
-
-## Credits
-
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
-
-### Content
-
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
-
-## Acknowledgements (optional)
-
-- Thank the people who provided support throughout this project.
+- Lot of credit goes t Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
+- Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
+- My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
