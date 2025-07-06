@@ -227,13 +227,13 @@ The hypothesis is validated if:
 - The model is built using the TensorFlow deep learning library.
 - Training and evaluation details—including architecture, compilation parameters, and performance metrics—are documented in the Modelling and Evaluation Jupyter notebook.
 - Programming Language - Python 
-- Cloud IDE ( for ediotrs and sourcee control )- We use Github and Jupyter.
+- Cloud IDE ( for editors and source control )- We use Github and Jupyter.
 - Cloud IDE help us in the CRISP-DM process to complete Data colelction, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
 - Dashboard : Streamlit
 - Cloud Hosting - Heroku or Render
 - Kaggle - This is the location for the images dataset provide by the client 
   - [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves 
-- Python Data Analysis Packakges are captured in the Requirements.txt file and imported inside the Jupyter notebooks
+- Python Data Analysis Packages are captured in the Requirements.txt file and imported inside the Jupyter notebooks
   - numpy==1.26.1
   - pandas==2.1.1
   - matplotlib==3.8.0
@@ -276,7 +276,7 @@ The hypothesis is validated if:
 
 # JUPYTER NOTEBOOKS
 
-# DATA COLLECTION NOTEBOOK 
+## DATA COLLECTION NOTEBOOK 
 
 - CRISP-DM Methodology 
   - The task undertaken in this notebook corresponds to the Data Understanding phase of the CRISP-DM methodology, essential for ensuring high-quality input into any ML pipeline.
@@ -338,7 +338,7 @@ The hypothesis is validated if:
 - NOTE: CRISP-DM encourages iterative backtracking — poor model performance later may warrant returning to this notebook to enhance data preparation.
 
 
-# DATA VISUALIZATION NOTEBOOK 
+## DATA VISUALIZATION NOTEBOOK 
 
 ### Objectives
 
@@ -377,7 +377,7 @@ The hypothesis is validated if:
 - data visualization for image data is usually limited to creating animage montage to visually differentiate between different pre-labeled images.
 - Understanding the statistical difference between the mean and variability of the images of different classes helps you to anticipate the quality of data for model training.
 
-# MODELLING AND EVALUATION NOTEBOOK 
+## MODELLING AND EVALUATION NOTEBOOK 
 
 ### Objectives
 
@@ -562,43 +562,107 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 - Helps non-technical users visualize what “good model performance” looks like.
 - Supports trust in the predictions shown in mildew_powdery_detection.py.
 
-# Streamlit APP Dashboard - Screenshots 
+# STREAMLIT APP DASHBOARD - SCREENSHOTS 
 
-- Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their requirement 1 and 2 
+- Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their **requirement 1 and 2**
 
-- This is the first page and captures the executive sumamry for the client . This is for non technical users.
+## **PAGE 1**
+  - Executive Summary - Business context, goals, and scope
 
-![streamlit_navigation_panel1](Readme.doc/streamlit_navigation_panel1.png)
+![page1_executive_project_summary](Readme.doc/page1_executive_project_summary.png)
 
-- This is the page 2 and captures the Requirements 1
+
+## **PAGE 2**
+- Cherry_leaves_Visualizer - Visual study **(addresses Business Requirement 1)**
+  - **Business requirement 1**
+    - Difference between average and variability image for each class ( healthy and powdery mildew)
+    - The differences between average healthy and average powdery mildew cherry leaves
+    - An image montage for each class.
+
+### The user is presented with three tabs on page 2
+
+![page2_three_tabs.png](Readme.doc/page2_three_tabs.png)
+
+### Mean and Standard deviation for Healthy and Mildew Powdery Image - 1 and 2 
+
+**IMAGE 1**
+![page2_mean_standadrd_deviation1.png](Readme.doc/page2_mean_standadrd_deviation1.png)
+
+**IMAGE 2**
+
+![page2_mean_standard_deviation2.png](Readme.doc/page2_mean_standard_deviation2.png)
+
+### Difference between average healthy and average mildeww powdery cells
+
+![page2_difference_average_images.png](Readme.doc/page2_difference_average_images.png)
+
+
+### Image Montage 
+
+
+**IMAGE 1 - User selection**
+- Here the user is asked to click on the "Create montage" button to create a montaage for ***healthy*** or ***powdery mildew leaves*** by selecting the ***Dropdown Label*** option
+
+
+![page2_click_create_montage.png](Readme.doc/page2_click_create_montage.png)
+
+**IMAGE 2 - Healthy Montage**
+
+
+![page2_healthy_montage.png](Readme.doc/page2_healthy_montage.png)
+
+**IMAGE 3 - Powdery Mildew Montage**
+
+
+![page2_powdery_mildew_montage.png](Readme.doc/page2_powdery_mildew_montage.png)
+
+
+## **PAGE 3**
+- Mildew Powdery Detection - Real-time prediction interface **(addresses Business Requirement 2)**
+
+- **Business requirement 2** 
+  - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
+
+**IMAGE 1 - User Selection**
+- Here the user is presented with a screen to drag and drop cherry leaves images for powdery mildew detection.
+- The user is also provided with a link to down the images from the Kaggle dataset 
+
+![page3_client_selection.png](Readme.doc/page3_client_selection.png)
+
+![page3_popup_to_upload.png](Readme.doc/page3_popup_to_upload.png)
+
+**IMAGE 2 - Heathy Leaf**
+
+![page3_healthy_leaf.png](Readme.doc/page3_healthy_leaf.png)
+
+- The user can down the predection score in a CSV File 
+
+![page3_healthy_leaft_prediction.png](Readme.doc/page3_healthy_leaft_prediction.png)
+
+
+
+**IMAGE 3 - Leaf with Mildew Powdery Fungal Infection**
+
+- NOTE: The user can upload muitple files as seen below 
+
+![page3_multiple_files.png](Readme.doc/page3_multiple_files.png)
+
+![page3_powdery_mildew_leaf.png](Readme.doc/page3_powdery_mildew_leaf.png)
+
+- The user can down the predection score in a CSV File 
+
+![page3_powdery_mildew_prediction.png](Readme.doc/page3_powdery_mildew_prediction.png)
+
+
+## **PAGE 4**
+  - Project Hypothesis Validation -Summarize and validate the project hypothesis
   
-![streamlit_page2_cherry_leaves_visualizer](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
+![]]()
 
-- ![average_variability](Readme.doc/average_variability.png)
+## **PAGE 5**
+  - Project Performance Metrics - Visualize model learning and evaluation.
 
-- This is the page 3 and captures the Requirements 2  
-
- ![streamlit_page3_mildew_powdery_detection](Readme.doc/streamlit_page3_mildew_powdery_detection.png)
-
-- Healthy Leaf
-
- ![healthy_leaf](Readme.doc/healthy_leaf.png)
-
-- Mildew Powdery - Fungal Infection
-  
-![fungal_powdery](Readme.doc/fungal_powdery.png)
-
-- This is the page 4 and outlines the project hypothesis 
-  
-![streamlit_project_hypothesis]](Readme.doc/streamlit_project_hypothesis.png)
-
-- This is last page ans show the ML model performance 
-
-![streamlit_project_performance_metrics](Readme.doc/streamlit_project_performance_metrics.png)
-
-
-
-
+![]()
 
 # UNFIXED BUGS
 
@@ -633,16 +697,12 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   
   ![render_deploy_issue](Readme.doc/render_deploy_issue.png)
   
-
 # PROJECT DEPLOYMENT
 
 - As stated earlier Heroku site has a limitation of 500MB on the slug file. 
 - Code Institute suggests using an alternate site called Render.com https://dashboard.render.com/web/new
 - Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 - Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
-
-
-
 
 
 ## Credits
