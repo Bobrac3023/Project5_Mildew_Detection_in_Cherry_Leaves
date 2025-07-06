@@ -655,14 +655,19 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 
 ## **PAGE 4**
-  - Project Hypothesis Validation -Summarize and validate the project hypothesis
+
+- Project Hypothesis Validation -Summarize and validate the project hypothesis
   
-![]]()
+![page4.png](Readme.doc/page4.png)
 
 ## **PAGE 5**
-  - Project Performance Metrics - Visualize model learning and evaluation.
 
-![]()
+- Project Performance Metrics - Visualize model learning and evaluation.
+
+![page5_model_performance.png](Readme.doc/page5_model_performance.png)
+
+![page5_test.png](Readme.doc/page5_test.png)
+
 
 # UNFIXED BUGS
 
@@ -695,7 +700,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 - Render Deploy issues 
   
-  ![render_deploy_issue](Readme.doc/render_deploy_issue.png)
+![render_deploy_issue](Readme.doc/render_deploy_issue.png)
   
 # PROJECT DEPLOYMENT
 
@@ -703,6 +708,16 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 - Code Institute suggests using an alternate site called Render.com https://dashboard.render.com/web/new
 - Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 - Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
+
+# APP FILES VALIDATION 
+
+## Cherry Leaves Visualizer
+
+![cherry_leaves_visualizer.png](Readme.doc/cherry_leaves_visualizer.png)
+
+## Executive Project Summary
+
+![executive_project_validation.png](Readme.doc/executive_project_validation.png)
 
 
 ## Credits
