@@ -253,23 +253,25 @@ The hypothesis is validated if:
   - DataCollection Notebook 
   - DataVisualization Notebook
   - Modelling and Evaluation Notebook
-- The CRISP-DM model and the different steps of the model are capture in the images below 
-  
+- The CRISP-DM model and the different steps of the model are capture in the images below
+
+## CRISP-DM Model
+
 ![crisp_dm_1](Readme.doc/crisp_dm_1.png)
    
-- **Business Understanding**
+## Business Understanding
   
 ![business_understaning_2](Readme.doc/business_understaning_2.png) 
 
-- **Data Understanding**
+## Data Understanding
 
 ![data_understanding_3](Readme.doc/data_understanding_3.png)
 
-- **Data Preparation**
+## Data Preparation
   
 ![data_preparation_4](Readme.doc/data_preparation_4.png) 
 
-- **Modelling**
+## Modelling
   
 ![modelling5](Readme.doc/modelling5.png) 
 
@@ -342,84 +344,119 @@ The hypothesis is validated if:
 
 ### Objectives
 
-* This note book helps meet the clients business requirements 1 as listed below  
-  - Average images and variability images for each class (healthy or powdery mildew). 
-    - In general the mean and standard deviation is called avergae and variablity. 
-    - This will help us meet the Checkbox 1 of Page 2 on our Steamlit Dashboard App
-  - The differences between average healthy and average powdery mildew cherry leaves. 
-    - This will help us meet the Checkbox 2 of Page 2 on our Steamlit Dashboard App. 
-    - We can see three images - Average healthy, Avergae Powdery and Difference in healthy and powdery
-  - An image montage for each class - healthy and Powdery Mildew cherry leaves
-    - In the Streamlit Dasboard app under Page 2 the client can select a labeel - Healthy or Powdery Mildew
-    - This will allow the client to create a montage of ramdom pro-labelled images from the selected images for the selected label.
-    - Every time the client clicks the **Create Montage** button, it generates a new montage of random images 
+- This notebook addresses Business Requirement 1 defined by the client, focusing on visually distinguishing healthy cherry leaves from those affected by powdery mildew.
+- The key deliverables aligned with the Streamlit dashboard ***(Page 2: Cherry Leaves Visualizer)*** include:
+  - **Average and Variability Images (Checkbox 1)**:
+    - Average images represent the mean pixel values across all samples in each class (healthy or infected).
+    - Variability is shown through standard deviation, highlighting intra-class consistency or noise.
+    - This visual summary helps the user compare both classes side-by-side using statistical representations.
+  - **Differences Between Class Averages (Checkbox 2)**:
+    - A third image is presented showing the pixel-wise differences between average healthy and average infected leaves.
+    - This helps the user understand subtle variations between the two categories, even if they are not immediately obvious to the human eye.
+    - All three visuals—Healthy Average, Infected Average, and Difference Image—are displayed side by side.
+  - **Image Montage per Class (Checkbox 3)**:
+    - Users can select a label ("Healthy" or "Powdery Mildew") via a dropdown menu.
+    - Upon clicking the Create Montage button, a new set of randomly sampled, pre-labeled images is displayed in a montage format.
+    - Each click generates a different combination, offering visual intuition on real-world variability within the class.
+- This visual analysis supports the client’s goal of assessing whether healthy and infected leaves can be reliably differentiated through human inspection or automated modeling.
   
 
 ### Inputs
 
-* The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
-  - Train Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/train
-  - Test Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/test
-  - Validate Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/validation
+- The input for this notebook comes from the training, validation, and test datasets that were created in the Data Collection Notebook, located in the following directory structure:
+  - Train Dataset - input/dataset/cherry-leaves/test
+  - Test Dataset - input/dataset/cherry-leaves/train
+  - Validate Dataset - input/dataset/cherry-leaves/validation
   
 
 ### Outputs
 
-* The output will as below 
-  - Image shape embedding pickle file 
-  - Mean and Variability of imagess per label plot 
-  - Plot to distinguish contrast between parasite-contained and uninfected cell images
-  - Generate code that answers business requirement 1 and can be used to build image montage on Streamlit dashboard
+- A pickle file containing the image shape embeddings.
+- Plots visualizing the mean and standard deviation (variability) for each class label (healthy and powdery mildew).
+- A contrast plot highlighting the differences between average healthy and mildew-infected images.
+- Functional code blocks that fulfill ***Business Requirement 1***, including support for generating image montages within the Streamlit dashboard.
 
 ### Importance of this notebook
 
-- This exercise is important to visually differentiate images of one class from another.
-- data visualization for image data is usually limited to creating animage montage to visually differentiate between different pre-labeled images.
-- Understanding the statistical difference between the mean and variability of the images of different classes helps you to anticipate the quality of data for model training.
+- This exercise is essential for visually differentiating images between the two classes: **healthy and powdery mildew**.
+- In image-based datasets, data visualization is typically limited to image montages that allow us to observe and compare patterns across pre-labeled images.
+- By analyzing the statistical differences in mean and variability of each class, we gain insights into the quality and separability of the data — ***a critical step before training any machine learning model***.
+
 
 ## MODELLING AND EVALUATION NOTEBOOK 
 
 ### Objectives
 
-- This note book helps meet the clients business requirements 2 as listed below  
+- This note book helps meet the clients ***business requirements 2*** as listed below  
 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 
 ### Inputs
 
-- The input for this notebook from the test, train and vaidation datasets created in the DataColelction notebook under the below directories
-  - Train Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/train
-  - Test Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/test
-  - Validate Dataset - /workspaces/Project5_Mildew_Detection_in_Cherry_Leaves/input/dataset/cherry-leaves/validation
-  - image shape embeddings
+- The following inputs are used, sourced from the Data Collection notebook:
+
+  - Train Dataset: /input/dataset/cherry-leaves/train
+
+  - Validation Dataset: /input/dataset/cherry-leaves/validation
+
+  - Test Dataset: /input/dataset/cherry-leaves/test
+
+  - Image Shape Embedding: /outputs/v1/image_shape.pkl
+
+  - Label Classes: ['healthy', 'powdery_mildew']
   
 
 ### Outputs
 
-* The output will as below 
-  - Images distribution plot in train, validation, and test set 
-  - Image augmentation 
-  - Class indices to change prediction inference in labels
-  - Machine learning model creation and training
-  - Save model
-  - Learning curve plot for model performance 
-  - Model evaluation on pickle file
-  - Prediction on the random image file
+- The notebook generates the following outputs, saved in the outputs/v1/ directory:
+
+- class_indices.pkl: For prediction inference in deployed apps.
+- mildew_detection_model.h5: Saved trained model.
+- evaluation.pkl: Pickled test loss and accuracy.
+
+- Training Performance Visuals:
+  - model_training_losses.png
+  - model_training_acc.png
+
+- Image Analytics:
+  - Average and variability plots per class (avg_var_*.png)
+  - Difference between class averages (difference_between_averages.png)
+
+- Predictions on unseen images using saved model.
+
+
 
 ### Importance of this notebook
 
-  - Image augmentation increases the training image data by artificially and temporarily creating training images through different processes,
-or a combination of multiple processes, such as random rotation, shifts, shear, and flips, etc, in the computer’s short term memory.
+- Image Augmentation enhances the training dataset by artificially generating new image variations (in memory) using transformations such as:
+  - Random rotations
+  - Width/height shifting
+  - Shearing
+  - Flipping
+  - Zooming and rescaling
+  - These augmentations expose the model to a wider range of image conditions, improving its ability to generalize and reducing the risk of overfitting.
+- Trains a robust CNN-based model, capable of accurately classifying healthy vs. mildew-affected cherry leaves.
+- Enables real-time prediction on new, unseen images — a core requirement of the Streamlit dashboard interface.
+- Stores essential artifacts for downstream integration:
+  - Trained model (.h5)
+  - Class mappings (class_indices.pkl)
+  - Evaluation metrics (evaluation.pkl)
+- Reinforces deployment readiness by:
+  - Applying early stopping to prevent overfitting
+  - Capturing model performance through accuracy/loss curves
+  - Aligning outputs to specific dashboard features
 
-- Data Augmentation Image 
+
+
+#### Data Augmentation Image
   
 ![data_augmentation](Readme.doc/data_augmentation.png)
 
-- Choice of the Algorithm 
+#### Choice of the Algorithm
 
 ![algorithm_selection](Readme.doc/algorithm_selection.png)
 
-- Overfitting Model 
+#### Overfitting Model 
   
 ![overfitting_model](Readme.doc/overfitting_model.png)
 
@@ -427,7 +464,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Dashboard Design (Streamlit App User Interface)
 
-- The Streamlit Dashboard is delivered via Five Distinct app files. 
+- The Streamlit Dashboard is delivered via **Five Distinct app** files. 
 - Together, these files form a complete, modular, and interactive machine learning dashboard for the detection of powdery mildew in cherry leaves.
 - Below is a comprehensive explanation of each file:
   - how it works individually, 
@@ -467,7 +504,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 - Visual study **(addresses Business Requirement 1)**
 
-### What it does (Delievarables)
+### What it does (Deliverables)
 
 - Provides an **interactive UI** to explore the dataset visually:
   - Shows **average and standard** deviation images.
@@ -494,7 +531,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ### What it does
 
-- Loads a trained CNN model (mildew_detection_model.h5) from disk.
+- Loads a trained CNN model **(mildew_detection_model.h5)** from disk.
 - Accepts user-uploaded images (.jpg, .jpeg, .png).
 - Predicts if the image is Healthy or Powdery Mildew using the model.
 - Displays:
@@ -566,13 +603,15 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 - Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their **requirement 1 and 2**
 
-## **PAGE 1**
-  - Executive Summary - Business context, goals, and scope
+## PAGE 1
+
+- Executive Summary - Business context, goals, and scope
 
 ![page1_executive_project_summary](Readme.doc/page1_executive_project_summary.png)
 
 
-## **PAGE 2**
+## PAGE 2
+
 - Cherry_leaves_Visualizer - Visual study **(addresses Business Requirement 1)**
   - **Business requirement 1**
     - Difference between average and variability image for each class ( healthy and powdery mildew)
@@ -585,10 +624,11 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ### Mean and Standard deviation for Healthy and Mildew Powdery Image - 1 and 2 
 
-**IMAGE 1**
+#### IMAGE 1
+
 ![page2_mean_standadrd_deviation1.png](Readme.doc/page2_mean_standadrd_deviation1.png)
 
-**IMAGE 2**
+#### IMAGE 2
 
 ![page2_mean_standard_deviation2.png](Readme.doc/page2_mean_standard_deviation2.png)
 
@@ -600,30 +640,33 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 ### Image Montage 
 
 
-**IMAGE 1 - User selection**
+#### IMAGE 1 - User selection
+
 - Here the user is asked to click on the "Create montage" button to create a montaage for ***healthy*** or ***powdery mildew leaves*** by selecting the ***Dropdown Label*** option
 
 
 ![page2_click_create_montage.png](Readme.doc/page2_click_create_montage.png)
 
-**IMAGE 2 - Healthy Montage**
+#### IMAGE 2 - Healthy Montage
 
 
 ![page2_healthy_montage.png](Readme.doc/page2_healthy_montage.png)
 
-**IMAGE 3 - Powdery Mildew Montage**
+#### IMAGE 3 - Powdery Mildew Montage
 
 
 ![page2_powdery_mildew_montage.png](Readme.doc/page2_powdery_mildew_montage.png)
 
 
-## **PAGE 3**
+## PAGE 3
+
 - Mildew Powdery Detection - Real-time prediction interface **(addresses Business Requirement 2)**
 
 - **Business requirement 2** 
   - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
 
-**IMAGE 1 - User Selection**
+### IMAGE 1 - User Selection
+
 - Here the user is presented with a screen to drag and drop cherry leaves images for powdery mildew detection.
 - The user is also provided with a link to down the images from the Kaggle dataset 
 
@@ -631,7 +674,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ![page3_popup_to_upload.png](Readme.doc/page3_popup_to_upload.png)
 
-**IMAGE 2 - Heathy Leaf**
+### IMAGE 2 - Heathy Leaf
 
 ![page3_healthy_leaf.png](Readme.doc/page3_healthy_leaf.png)
 
@@ -641,7 +684,7 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 
 
-**IMAGE 3 - Leaf with Mildew Powdery Fungal Infection**
+### IMAGE 3 - Leaf with Mildew Powdery Fungal Infection
 
 - NOTE: The user can upload muitple files as seen below 
 
@@ -654,13 +697,13 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 ![page3_powdery_mildew_prediction.png](Readme.doc/page3_powdery_mildew_prediction.png)
 
 
-## **PAGE 4**
+## PAGE 4
 
 - Project Hypothesis Validation -Summarize and validate the project hypothesis
   
 ![page4.png](Readme.doc/page4.png)
 
-## **PAGE 5**
+## PAGE 5
 
 - Project Performance Metrics - Visualize model learning and evaluation.
 
@@ -704,10 +747,16 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   
 # PROJECT DEPLOYMENT
 
+- Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
+- Github Repository https://github.com/Bobrac3023/Project5_Mildew_Detection_in_Cherry_Leaves.git
+
+### Why Render and not Heroku 
+
 - As stated earlier Heroku site has a limitation of 500MB on the slug file. 
 - Code Institute suggests using an alternate site called Render.com https://dashboard.render.com/web/new
 - Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
-- Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
+
+
 
 # APP FILES VALIDATION 
 
@@ -720,21 +769,33 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 ![executive_project_validation.png](Readme.doc/executive_project_validation.png)
 
 
+## Mildew Powdery Detection 
+
+![mildew_powdery_detection_validation.png](Readme.doc/mildew_powdery_detection_validation.png)
+
+## Project Hypothesis Validation 
+
+![project_hypothesis_validation.png](Readme.doc/project_hypothesis_validation.png)
+
+## Project Performance Metrics
+
+![project_performance_metrics.png](Readme.doc/project_performance_metrics.png)
+
+
 ## Credits
 
-- A lot of credit goes to Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
-- Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
-- My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
-- The code was  sourced and heavily influenced by Gyan Shashwat through his Walkthrough project 1
-- A lot of inspiration and guidance on Streamlit app buildup was taken from Jordon Fletorides a fellow student through his project link https://github.com/jflets/ml-mildew-detector/blob/main/app_pages/page_mildew_detection.py
-- Pandas - https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
-- Keras Augmentation : https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
-- Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
-
-
-### Content
-
-- All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
+- Code Institute Documentation: Definitions and other key concepts related to CNN models were sourced from the learning notebooks
+- Model architecture and base code were adapted from Gyan Shashwat’s Walkthrough Project 1 – Malaria Detector.
+- Streamlit dashboard structure was inspired by Jordon Fletorides' mildew detection project.
+- Dataset provided by Code Institute via Kaggle – Cherry Leaves Dataset.
+- Pandas Categorical Documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html
+- Keras Image Augmentation Guide: https://pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augmentation/
+- Deployment Guide (Render): https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
+- JSON Validation: https://jsonlint.com/
+- Python Code Linter: https://pep8ci.herokuapp.com/
+- Code Institute – How to Use Jupyter Notebooks: https://github.com/Code-Institute-Solutions/how-to-use-jupyter-notebooks
+- Streamlit API Documentation: https://docs.streamlit.io/develop/api-reference
+- ChatGPT https://chatgpt.com/?model=gpt-4o
 
 ### Media
 
@@ -742,6 +803,13 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
 
 ## Acknowledgements 
 
-- Lot of credit goes t Gyan Shashwat,for his wonderful explaination in Walkthrough Project 1- malaria Detector 
-- Neil and Fernando Doritu also did a fantastic course explaining the concepts through the learing modules. 
-- My mentor Rohit Sharma was very gracious to come on calls after a tiring day and short notices to accomode my requests.
+
+- Gyan Shashwat – A significant portion of the model logic and structure was inspired by his detailed walkthrough in Project 1: Malaria Detector. His clear explanations greatly enhanced understanding and implementation.
+
+- Neil and Fernando Doritu – Their engaging and well-structured course modules provided an excellent foundation for understanding CNNs and model training.
+
+- Rohit Sharma (Mentor) – Special thanks to my mentor for his unwavering support, especially for accommodating spontaneous calls after long days. His guidance was instrumental throughout the project.
+
+- Jordon Fletorides – The design and structure of the Streamlit dashboard were influenced by Jordon’s excellent work in his mildew detection project, which served as both reference and inspiration.
+
+- Thanks to ChatGPT by OpenAI for assisting with clarifying concepts, refining technical explanations, and polishing documentation during this project.
