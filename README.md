@@ -3,7 +3,7 @@
 
 # Project Overview
 
-This project aims to solve a real-world agricultural challenge: identifying cherry leaves infected by powdery mildew. The goal is to replace the manual, time-consuming inspection process with a scalable, image-based machine learning solution.he cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
+This project aims to solve a real-world agricultural challenge: identifying cherry leaves infected by powdery mildew. The goal is to replace the manual, time-consuming inspection process with a scalable, image-based machine learning solution.The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
 ## General Background
 
@@ -46,12 +46,46 @@ To address this, the IT team proposed the implementation of a machine learning (
 The key business requirements for this project are as follows:
 
 - **Business requirement 1**
-  - 1 Difference between average and variability image for each class ( healthy and powdery mildew)
-  - 2 The differences between average healthy and average powdery mildew cherry leaves
-  - 3 An image montage for each class.
+  - Difference between average and variability image for each class ( healthy and powdery mildew)
+  - The differences between average healthy and average powdery mildew cherry leaves
+  - An image montage for each class.
 - **Business requirement 2** 
   - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
 
+## Mapping of Business Requirements to Data Visualization & ML Tasks with User Stories
+
+### Business Requirement 1: Visual Differentiation
+
+- Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+
+#### Mapped to Data Visualization Tasks
+
+- Generate average and variability image plots for both classes (healthy and mildew).
+- Create image montage per class (random samples).
+- Compute pixel-level difference between healthy and mildew average images.
+
+#### User Stories:
+
+- As a farm analyst, I want to compare average and variability images, so that I can identify consistency or irregularities across leaf classes.
+- As a quality inspector, I want to visualize differences between healthy and infected leaves, so that I can validate manual inspection criteria.
+- As a stakeholder with no ML knowledge, I want an intuitive image montage, so that I can see patterns without understanding model math.
+
+### Business Requirement 2: Predictive Classification
+
+- Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
+
+#### Mapped to Machine Learning Tasks
+
+- Train a Convolutional Neural Network (CNN) on image data.
+- Apply data augmentation for generalization.
+- Evaluate performance using accuracy/loss metrics and test set predictions.
+- Export model and class index mappings for real-time use.
+
+#### User Stories:
+
+- As an IT Manager, I want an accurate predictive model, so that we can automate mildew detection and reduce manual effort.
+- As a farm technician, I want to upload a leaf image and receive a prediction, so that I can act quickly in the field.
+- As an executive, I want to see accuracy and performance visuals, so that I can trust the model before approving deployment.
 
 ### Goal
 
@@ -105,8 +139,7 @@ The key business requirements for this project are as follows:
 ###  Hypothesis 
 
 - The client’s primary objective is to ensure that no compromised-quality produce is delivered to the market.
-- During the initial business assessment, it was determined that traditional visual inspection techniques could help differentiate between healthy and mildew-infected cherry leaves.
-- Two clear business requirements were established:
+- During the initial business assessment, two clear business requirements were established:
   - Conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
   - Develop a predictive mechanism to classify a cherry leaf as healthy or infected.
 - The client further emphasized the need for a user-friendly dashboard that delivers both technical and non-technical outputs for decision-making.
@@ -228,7 +261,7 @@ The hypothesis is validated if:
 - Training and evaluation details—including architecture, compilation parameters, and performance metrics—are documented in the Modelling and Evaluation Jupyter notebook.
 - Programming Language - Python 
 - Cloud IDE ( for editors and source control )- We use Github and Jupyter.
-- Cloud IDE help us in the CRISP-DM process to complete Data colelction, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
+- Cloud IDE help us in the CRISP-DM process to complete Data collection, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
 - Dashboard : Streamlit
 - Cloud Hosting - Heroku or Render
 - Kaggle - This is the location for the images dataset provide by the client 
@@ -249,11 +282,11 @@ The hypothesis is validated if:
 # CRISP-DM
 
 - CRISP-DM is the Cross Industry  Standard Process for Data Mining. 
-- Through this project we have used this standard while building our three Jupyter notebooks.
+- Throughout this project we have used this standard while building our three Jupyter notebooks.
   - DataCollection Notebook 
   - DataVisualization Notebook
   - Modelling and Evaluation Notebook
-- The CRISP-DM model and the different steps of the model are capture in the images below
+- The CRISP-DM model and the different steps of the model are captured in the images below
 
 ## CRISP-DM Model
 
@@ -344,7 +377,7 @@ The hypothesis is validated if:
 
 ### Objectives
 
-- This notebook addresses Business Requirement 1 defined by the client, focusing on visually distinguishing healthy cherry leaves from those affected by powdery mildew.
+- This notebook addresses **Business Requirement 1** defined by the client, focusing on visually distinguishing healthy cherry leaves from those affected by powdery mildew.
 - The key deliverables aligned with the Streamlit dashboard ***(Page 2: Cherry Leaves Visualizer)*** include:
   - **Average and Variability Images (Checkbox 1)**:
     - Average images represent the mean pixel values across all samples in each class (healthy or infected).
@@ -353,7 +386,6 @@ The hypothesis is validated if:
   - **Differences Between Class Averages (Checkbox 2)**:
     - A third image is presented showing the pixel-wise differences between average healthy and average infected leaves.
     - This helps the user understand subtle variations between the two categories, even if they are not immediately obvious to the human eye.
-    - All three visuals—Healthy Average, Infected Average, and Difference Image—are displayed side by side.
   - **Image Montage per Class (Checkbox 3)**:
     - Users can select a label ("Healthy" or "Powdery Mildew") via a dropdown menu.
     - Upon clicking the Create Montage button, a new set of randomly sampled, pre-labeled images is displayed in a montage format.
@@ -382,6 +414,12 @@ The hypothesis is validated if:
 - In image-based datasets, data visualization is typically limited to image montages that allow us to observe and compare patterns across pre-labeled images.
 - By analyzing the statistical differences in mean and variability of each class, we gain insights into the quality and separability of the data — ***a critical step before training any machine learning model***.
 
+### Summary of Visual Differentiation Insights
+
+- Powdery mildew-affected leaves consistently show increased pixel variability in infected regions.
+- Difference plots (avg_mildew - avg_healthy) reveal distinct contrast in leaf veins and fungal spots.
+- Montages provide strong visual support that infected leaves are distinguishable with high confidence.
+- These findings confirm the feasibility of visual classification even before applying ML techniques.
 
 ## MODELLING AND EVALUATION NOTEBOOK 
 
@@ -445,7 +483,6 @@ The hypothesis is validated if:
   - Applying early stopping to prevent overfitting
   - Capturing model performance through accuracy/loss curves
   - Aligning outputs to specific dashboard features
-
 
 
 #### Data Augmentation Image
@@ -531,19 +568,19 @@ The hypothesis is validated if:
 
 ### What it does
 
-- Loads a trained CNN model **(mildew_detection_model.h5)** from disk.
+- Loads a trained CNN model **(mildew_detection_model.h5)**.
 - Accepts user-uploaded images (.jpg, .jpeg, .png).
 - Predicts if the image is Healthy or Powdery Mildew using the model.
 - Displays:
-- Uploaded image.
-- Predicted class and confidence.
-- Table of results.
-- CSV download of results.
+  - Uploaded image.
+  - Predicted class and confidence.
+  - Table of results.
+  - CSV download of results.
 - Uses TensorFlow, PIL, NumPy, and Streamlit components.
 
 ### How it complements others
 
-- Implements Business Requirement 2.
+- Implements **Business Requirement 2**.
 - Provides a live demonstration of the model's predictive power.
 - Prediction functionality validates the claim in project_hypothesis_validation that mildew is "computationally" detectable.
 - Connects user interaction to the model's training results seen in project_performance_metrics.
@@ -678,10 +715,9 @@ The hypothesis is validated if:
 
 ![page3_healthy_leaf.png](Readme.doc/page3_healthy_leaf.png)
 
-- The user can down the predection score in a CSV File 
+- The user can download the prediction score in a CSV File 
 
 ![page3_healthy_leaft_prediction.png](Readme.doc/page3_healthy_leaft_prediction.png)
-
 
 
 ### IMAGE 3 - Leaf with Mildew Powdery Fungal Infection
@@ -692,7 +728,7 @@ The hypothesis is validated if:
 
 ![page3_powdery_mildew_leaf.png](Readme.doc/page3_powdery_mildew_leaf.png)
 
-- The user can down the predection score in a CSV File 
+- The user can download the prediction score in a CSV File 
 
 ![page3_powdery_mildew_prediction.png](Readme.doc/page3_powdery_mildew_prediction.png)
 
@@ -756,8 +792,6 @@ The hypothesis is validated if:
 - Code Institute suggests using an alternate site called Render.com https://dashboard.render.com/web/new
 - Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 
-
-
 # APP FILES VALIDATION 
 
 ## Cherry Leaves Visualizer
@@ -802,7 +836,6 @@ The hypothesis is validated if:
 - All Images in this Readme file are sourced from the lessons covered in the Predictive analytics course at Code Institute.
 
 ## Acknowledgements 
-
 
 - Gyan Shashwat – A significant portion of the model logic and structure was inspired by his detailed walkthrough in Project 1: Malaria Detector. His clear explanations greatly enhanced understanding and implementation.
 

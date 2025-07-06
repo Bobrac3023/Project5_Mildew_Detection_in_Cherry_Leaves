@@ -59,13 +59,16 @@ def project_hypothesis_validation():
 
     st.subheader("Cherry Leaves Visualizer (Requirement 1)")
     st.write(
-        """
-        - Average and variability plots show consistent differences in
-          texture and color patterns.
-        - Difference plots between average healthy and mildew leaves confirm
-          visual separation.
-        - Image montages reveal clear mildew characteristics on infected
-          leaves.
+
+            """
+        - **Statistical Averages**: The average pixel composition of healthy
+        vs. mildew-affected leaves was computed and visualized.
+        - **Standard Deviation (Variability)**: Standard deviation
+        images highlight greater pixel variability in mildew-infected leaves.
+        - **Difference Image**: A pixel-wise difference plot quantitatively
+        confirmed visible disparities.
+        - **Image Montage**: Random montages of pre-labeled images further
+        demonstrated consistent mildew characteristics.
         """
     )
 
