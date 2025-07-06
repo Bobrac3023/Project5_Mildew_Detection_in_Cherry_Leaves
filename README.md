@@ -13,11 +13,14 @@ This project aims to solve a real-world agricultural challenge: identifying cher
   - Head of IT and Innovation
   - Farmy & Foods
 
-### Problem:
+Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
 
-- Powdery mildew has been affecting the quality of cherry leaves.
-- Manual visual inspection is slow and labor-intensive.
-- Risk of compromised products reaching the market.
+### Business Issue:
+
+- The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
+  - Powdery mildew has been affecting the quality of cherry leaves.
+  - Manual visual inspection is slow and labor-intensive.
+  - Risk of compromised products reaching the market.
 
 ### Objective:
 
@@ -38,7 +41,22 @@ With thousands of cherry trees distributed across multiple farms, this process i
 
 To address this, the IT team proposed the implementation of a machine learning (ML) system capable of analyzing cherry leaf images and providing an instant classification of leaf health. The initiative is not only aimed at solving the current problem in cherry crops but also serves as a pilot model that can be extended to other crops facing similar pest or disease-related challenges.
 
+### Business Requirements 1 and 2
+
 The key business requirements for this project are as follows:
+
+- **Business requirement 1**
+  - 1 Difference between average and variability image for each class ( healthy and powdery mildew)
+  - 2 The differences between average healthy and average powdery mildew cherry leaves
+  - 3 An image montage for each class.
+- **Business requirement 2** 
+  - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
+
+
+### Goal
+
+- The manual process in place today is not scalable due to time spent in inspection.
+- To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew.
 
 - **Visual Differentiation:**
   - Develop a visual study to determine whether healthy and infected cherry leaves can be reliably distinguished using image-based features such as color, texture, and shape variations
@@ -48,10 +66,43 @@ The key business requirements for this project are as follows:
 - **Dashboard Output:**
   - Create an interactive dashboard that provides both technical metrics (accuracy, loss curves, confusion matrix) and non-technical insights (clear predictions, sample visuals) to support stakeholders with diverse backgrounds in interpreting model results.
 
+### Client Benefit
 
-## Hypothesis and How to Validate
+- The client will not supply the market with a product of compromised quality.
 
-### Project Hypothesis
+# Business Assessment Questions - Answered 
+
+1. What are the business requirements?
+   - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+   - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+2. Is there any business requirement that can be answered with conventional data analysis?
+   - Yes, we can use conventional data analysis to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+3. Does the client need a dashboard or an API endpoint?
+   - The client needs a dashboard.
+4. What does the client consider as a successful project outcome?
+   - A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+   - Also, the capability to predict if a cherry leaf is healthy or contains powdery mildew.
+5. Can you break down the project into Epics and User Stories?
+   - Information gathering and data collection.
+   - Data visualization, cleaning, and preparation.
+   - Model training, optimization and validation.
+   - Dashboard planning, designing, and development.
+   - Dashboard deployment and release.
+6. Ethical or Privacy concerns?
+   - The client provided the data under an NDA (non-disclosure agreement), therefore the data should only be shared with professionals that are officially involved in the project.
+7. Does the data suggest a particular model?
+   - The data suggests a binary classifier, indicating whether a particular cherry leaf is healthy or contains powdery mildew.
+8. What are the model's inputs and intended outputs?
+   - The input is a cherry leaf image and the output is a prediction of whether the cherry leaf is healthy or contains powdery mildew.
+9. What are the criteria for the performance goal of the predictions?
+   - We agreed with the client a degree of 97% accuracy.
+10. How will the client benefit?
+    - The client will not supply the market with a product of compromised quality.
+
+# PROJECT HYPOTHESEIS AND VALIDATION
+
+
+###  Hypothesis 
 
 - The client’s primary objective is to ensure that no compromised-quality produce is delivered to the market.
 - During the initial business assessment, it was determined that traditional visual inspection techniques could help differentiate between healthy and mildew-infected cherry leaves.
@@ -115,199 +166,9 @@ The hypothesis is validated if:
 - The trained model demonstrates high predictive accuracy (above 99% test accuracy).
 - The final dashboard effectively communicates both analytical and actionable insights to stakeholders.
 
-# Rationale to map Business requirements Data Visualisations and ML tasks
+# Model Architecture and Learning Approach
 
-
-## ML Business Case Assessment 
-
-Marianne McGuineys, a fictional individual, is the head of IT and Innovation at Farmy & Foods, a company in the agricultural sector that produces and harvests different types of food. Recently, she is facing a challenge where their cherry plantations have been presenting powdery mildew, which is a fungal disease that affects a wide range of plants.
-
-**Business Issue**:
-
-- The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
-  
-**Client Benefit**
-
-- The client will not supply the market with a product of compromised quality.
-
-**Goal** : 
-
-- The manual process in place today is not scalable due to time spent in inspection.
-- To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, if it is healthy or has powdery mildew.
-
-- **Business requirement 1**
-  - 1 Difference between average and variability image for each class ( healthy and powdery mildew)
-  - 2 The differences between average healthy and average powdery mildew cherry leaves
-  - 3 An image montage for each class.
-- **Business requirement 2** 
-  - Deliver an ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
-
-## Answer questions related to the Business Assessment 
-
-1. What are the business requirements?
-   - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-   - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
-2. Is there any business requirement that can be answered with conventional data analysis?
-   - Yes, we can use conventional data analysis to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-3. Does the client need a dashboard or an API endpoint?
-   - The client needs a dashboard.
-4. What does the client consider as a successful project outcome?
-   - A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-   - Also, the capability to predict if a cherry leaf is healthy or contains powdery mildew.
-5. Can you break down the project into Epics and User Stories?
-   - Information gathering and data collection.
-   - Data visualization, cleaning, and preparation.
-   - Model training, optimization and validation.
-   - Dashboard planning, designing, and development.
-   - Dashboard deployment and release.
-6. Ethical or Privacy concerns?
-   - The client provided the data under an NDA (non-disclosure agreement), therefore the data should only be shared with professionals that are officially involved in the project.
-7. Does the data suggest a particular model?
-   - The data suggests a binary classifier, indicating whether a particular cherry leaf is healthy or contains powdery mildew.
-8. What are the model's inputs and intended outputs?
-   - The input is a cherry leaf image and the output is a prediction of whether the cherry leaf is healthy or contains powdery mildew.
-9. What are the criteria for the performance goal of the predictions?
-   - We agreed with the client a degree of 97% accuracy.
-10. How will the client benefit?
-    - The client will not supply the market with a product of compromised quality.
-  
-## Dashboard Design (Streamlit App User Interface)
-
-The Streamlit Dashboard is delivered via Five Distinct app files. Together, these files form a complete, modular, and interactive machine learning dashboard for the detection of powdery mildew in cherry leaves.
-Below is a comprehensive explanation of each file, how it works individually, and how they complement each other as a cohesive project
-
-### Page 1: Executive_Project Summary
-
-- The Execuive Project Summary is delivered via the ***executive_project_summary*** file
-
-#### Purpose:
-
-- Business context, goals, and scope
-
-#### What it does (Deliverables)
-
-- Introduces the fictional stakeholder : (Marianne McGuineys) and company (Farmy & Foods).
-- Describes the problem : manual mildew detection is time-consuming and not scalable.
-- Lays out why an ML solution is appropriate.
-- Defines two business requirements:
-  - Visual differentiation between healthy and mildew-infected leaves.
-  - Predictive classification using ML.
-- Points to the Kaggle dataset used.
-- Summarizes dashboard sections like Cherry Leaves Visualizer, Mildew Detection, etc.
-
-### How it complements others
-
-- Sets the foundation for the hypothesis validation.
-- Tells the business story that is answered with the technical notebooks.
-- Describes what users will see in other modules (e.g., checkboxes, model output).
-
-
-### Page 2: Cherry_leaves_Visualizer
-
-- The page is is delivered via the ***cherry_leaves_visualizer*** file
-
-### Purpose:
-
-- Visual study **(addresses Business Requirement 1)**
-
-### What it does (Delievarables)
-
-- Provides an **interactive UI** to explore the dataset visually:
-  - Shows **average and standard** deviation images.
-  - Displays **pixel-wise differences** between average healthy and mildew-infected leaves.
-  - Allows users to generate image montages for visual inspection by class.
-- Uses ***matplotlib, seaborn, and PIL*** for image processing.
-- Fully interactive using Streamlit checkboxes, selectbox, and image(). 
-
-### How it complements others.
-
-- Provides the visual evidence to support the hypothesis that mildew is visually identifiable.
-- Directly supports the **first business requirement** (visual differentiation).
-- The ***"Findings"*** section in project_hypothesis_validation refers to this output.
-- Data used here is the same dataset used in training the ML model.
-
-
-### Page 3: Mildew_Powdery_Detection
-
-- The page is is delivered via the ***mildew_powdery_detection*** file
-
-### Purpose: 
-
-- Real-time prediction interface **(addresses Business Requirement 2)**
-
-### What it does
-
-- Loads a trained CNN model (mildew_detection_model.h5) from disk.
-- Accepts user-uploaded images (.jpg, .jpeg, .png).
-- Predicts if the image is Healthy or Powdery Mildew using the model.
-- Displays:
-- Uploaded image.
-- Predicted class and confidence.
-- Table of results.
-- CSV download of results.
-- Uses TensorFlow, PIL, NumPy, and Streamlit components.
-
-### How it complements others
-
-- Implements Business Requirement 2.
-- Provides a live demonstration of the model's predictive power.
-- Prediction functionality validates the claim in project_hypothesis_validation that mildew is "computationally" detectable.
-- Connects user interaction to the model's training results seen in project_performance_metrics.
-
-### Page 4: Project_Hypothesis_Validation
-
-- The page is is delivered via the ***project_hypothesis_validation*** file
-
-### Purpose: 
-
-- Summarize and validate the project hypothesis
-
-### What it does
-
-- Defines the core hypothesis: mildew is detectable both visually and via ML.
-- Explains:
-  - Business requirements.
-  - ML pipeline used (data prep, augmentation, CNN design, evaluation).
-  - Visual study outcomes.
-  - Model training and test accuracy.
-- Includes a clear conclusion and next steps:
-  - Scaling.
-  - Deployment.
-  - Generalizability to other crops.
-
-### How it complements others
-
-- Connects the visual output from cherry_leaves_visualizer.py and the model results from mildew_powdery_detection.py.
-- Ties all technical and business findings together to validate project success.
-- Serves as the bridge between executive overview and technical proof.
-
-
-### Page 5: Project_Performance_Metrics
-
-- The page is is delivered via the ***project_performance_metrics*** file
-
-### Purpose:
-
-- Visualize model learning and evaluation
-
-### What it does
-
-- Loads model training curves (accuracy and loss PNGs).
-- Reads saved evaluation metrics (evaluation.pkl).
-- Displays:
-  - Training vs. validation accuracy/loss.
-  - Test accuracy/loss as a DataFrame.
-- Flags potential overfitting.
-- Explains model generalization performance.
-
-### How it complements others
-
-- Reinforces the findings stated in project_hypothesis_validation.py.
-- Helps non-technical users visualize what “good model performance” looks like.
-- Supports trust in the predictions shown in mildew_powdery_detection.py.
-
-
-# MACHINE LEARNING PIPELINE
+## MACHINE LEARNING PIPELINE
 
 - A typical workflow used for supervised learning is: 
   - Split the dataset into train and test set
@@ -317,18 +178,62 @@ Below is a comprehensive explanation of each file, how it works individually, an
   - start from data collection
   - Conduct EDA (Exploratory Data Analysis) etc.
   - The Machine learning pipeline can be broken down into three sections as can be seen in the image below.These sections are also used when creating the three Jupyter notebooks
-  ![machine_learning_pipeline](Readme.doc/machine_learning_pipeline.png)
 
-# INFRASTRUTURE TOOLS AND TECHNOLOGIES
+![machine_learning_pipeline](Readme.doc/machine_learning_pipeline.png)
 
+
+## Model Creation
+
+- The client’s objective is to predict whether a cherry leaf is healthy or affected by powdery mildew. 
+- This prediction directly supports functionality within Page 3: mildew_powdery_detection of the Streamlit Dashboard application.
+- To achieve this, we implemented a deep learning classification model, with the following rationale and components:
+
+## Why Classification and CNN? 
+
+- CNNs are a modern evolution of artificial neural networks, specially designed for extracting spatial hierarchies in images.
+- The input data consists of images, which are unstructured data. For such data, Convolutional Neural Networks (CNNs) are the preferred model architecture.
+
+- A typical CNN architecture includes:
+  - Convolutional layers to capture low- and high-level features
+  - Pooling layers for dimensionality reduction
+  - Fully connected (dense) layers for decision making
+
+![cnn_model](Readme.doc/cnn_model.png)
+
+
+## Deep Learning and Feature Learning
+
+- The "deep" in deep learning refers to the presence of multiple layers of neurons, enabling the network to learn complex patterns.
+- In our case, the CNN learns from the dominant visual feature in labeled images: powdery mildew patterns on cherry leaves.
+- The learning process is inspired by human error correction, where mistakes are reduced iteratively using:
+  - A loss function to measure prediction error
+  - An optimizer to adjust weights and minimize the loss over time
+
+
+### BIAS & BACKPROPOGATION 
+
+- Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATION** due to which we do not have to spend a lot of time doing feature engineering for data. 
+- These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
+  - Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
+  - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
+  - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
+
+- TensorFlow Loss and Optimzation 
+  
+![tensorflow_loss_optimizer](Readme.doc\tensorflow_loss_optimizer.png)
+
+## INFRASTRUCTURE TOOLS AND TECHNOLOGIES
+
+- The model is built using the TensorFlow deep learning library.
+- Training and evaluation details—including architecture, compilation parameters, and performance metrics—are documented in the Modelling and Evaluation Jupyter notebook.
 - Programming Language - Python 
 - Cloud IDE ( for ediotrs and sourcee control )- We use Github and Jupyter.
-- loud IDE help us in the CRISP-DM process to complete Data colelction, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
+- Cloud IDE help us in the CRISP-DM process to complete Data colelction, Visualization, Cleaning along with Model training and evolution into a Jupyter Notebook 
 - Dashboard : Streamlit
 - Cloud Hosting - Heroku or Render
 - Kaggle - This is the location for the images dataset provide by the client 
   - [Kaggle] https://www.kaggle.com/codeinstitute/cherry-leaves 
-- Python Data Analysis Packakges: Captured in the Requirements.txt file and imported inside the Jupyter notebooks
+- Python Data Analysis Packakges are captured in the Requirements.txt file and imported inside the Jupyter notebooks
   - numpy==1.26.1
   - pandas==2.1.1
   - matplotlib==3.8.0
@@ -340,20 +245,7 @@ Below is a comprehensive explanation of each file, how it works individually, an
   - scikit-learn==1.3.1
   - tensorflow-cpu==2.16.1
   - keras>=3.0.0
-- Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
-  - A Convolution Neural Netowrk is commonly used for image processing and computer vision.
-  - As our dataset was images , this was a natural choice.
-- Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
-- These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
-  - Tensor flow a popular Python package using the Sequential Model function to model Neural Networks using different layers was deployed.
-  - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
-  - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
 
-- TensorFlow Loass and Optimzation 
-  
-![tensorflow_loss_optimizer](Readme.doc\tensorflow_loss_optimizer.png)
-
-  
 # CRISP-DM
 
 - CRISP-DM is the Cross Industry  Standard Process for Data Mining. 
@@ -363,7 +255,7 @@ Below is a comprehensive explanation of each file, how it works individually, an
   - Modelling and Evaluation Notebook
 - The CRISP-DM model and the different steps of the model are capture in the images below 
   
-  ![crisp_dm_1](Readme.doc/crisp_dm_1.png)
+![crisp_dm_1](Readme.doc/crisp_dm_1.png)
    
 - **Business Understanding**
   
@@ -382,33 +274,68 @@ Below is a comprehensive explanation of each file, how it works individually, an
 ![modelling5](Readme.doc/modelling5.png) 
 
 
+# JUPYTER NOTEBOOKS
+
 # DATA COLLECTION NOTEBOOK 
 
-- Data Collection is part of the Data Understanding Step of the CRISP-DM Methodology . 
+- CRISP-DM Methodology 
+  - The task undertaken in this notebook corresponds to the Data Understanding phase of the CRISP-DM methodology, essential for ensuring high-quality input into any ML pipeline.
 
 
 ### Objectives
 
-* Fetch data from Kaggle dataset . The datasource for this project has been provided by cCode institute at https://www.kaggle.com/datasets/codeinstitute/cherry-leaves in the form a zip file 
-* Extract the Zip file , and prepare it for further Machine Learning analysis 
-* Save the file in out/dataset/ folder and push it to the repo 
-  
+- Primary Goal
+  - Fetch data from the Kaggle dataset hosted by Code Institute (https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) to   initiate the machine learning workflow.
+- Extraction and Decomprression 
+  - Extract the ***zip*** archive containing two classes — ***healthy and powdery_mildew*** — into a structured directory format suitable for supervised image classification.
+- Prepare for Modelling 
+  - Clean, preprocess, and structure the dataset into standardized subfolders to support training, validation, and testing stages.
+  - Implement data integrity and quality assurance through cleaning and filtering steps.
+- CRISP-DM Methodology 
+  - This task corresponds to the Data Understanding phase of the CRISP-DM methodology, essential for ensuring high-quality input into any ML pipeline.
+
 
 ### Inputs
 
-* The input for this notebook is a Kaggle dataset from Code Insittute at https://www.kaggle.com/datasets/codeinstitute/cherry-leaves
-* This zip file is saved and extracted at input/datase/cherry_leaves/folder 
-* There are Two  file folders- Healthy and Power_mildew
+- Data Source:
+  - Kaggle Dataset: https://www.kaggle.com/datasets/codeinstitute/cherry-leaves
+  - ZIP file containing two subfolders: healthy/ and powdery_mildew/
+- Directory Structure Post-Extraction:
+  - input/dataset/cherry-leaves/
+    - healthy/
+    - powdery_mildew/
+- Environment Setup:
+  - Libraries installed via requirements.txt
+  - Python dependencies include TensorFlow, Keras, Scikit-learn, Matplotlib, Seaborn, Streamlit, and others.
+
 
 ### Outputs
 
-* The output will stored in the output/dataset folder and pushed to the gitpod repo.  
+- The output will stored in the output/dataset folder and pushed to the gitpod repo.  
+- Directory After Cleaning & Splitting:
+  - input/dataset/cherry-leaves/
+    - train/
+      - healthy/
+      - powdery_mildew/
+    - validation/
+      - healthy/
+      - powdery_mildew/
+    - test/
+      - healthy/
+      - powdery_mildew/
+- Output Location:
+  - Cleaned and split dataset saved under /input/dataset/cherry-leaves/
+- Ready for model training, validation, and final evaluation
+
 
 ### Additional Comments
 
-* Data Collection is part of the Data Understanding section of the CRISP-DM methodology.
-* This is the second most important step of the CRISP-DM methodology after understanding the business requirements. 
-
+- Data quality and structure significantly impact model performance. 
+- Even if the data is client-provided, validation and cleanup are non-negotiable steps.
+- This notebook is part of a modular ML pipeline and precedes:
+  - DataVisualization.ipynb (Data Augmentation and EDA)
+  - ModellingAndEvaluation.ipynb (Model training, evaluation, and tuning)
+- NOTE: CRISP-DM encourages iterative backtracking — poor model performance later may warrant returning to this notebook to enhance data preparation.
 
 
 # DATA VISUALIZATION NOTEBOOK 
@@ -496,125 +423,226 @@ or a combination of multiple processes, such as random rotation, shifts, shear, 
   
 ![overfitting_model](Readme.doc/overfitting_model.png)
 
-## Unfixed Bugs
+# STREAMLIT APP
+
+## Dashboard Design (Streamlit App User Interface)
+
+- The Streamlit Dashboard is delivered via Five Distinct app files. 
+- Together, these files form a complete, modular, and interactive machine learning dashboard for the detection of powdery mildew in cherry leaves.
+- Below is a comprehensive explanation of each file:
+  - how it works individually, 
+  - how they complement each other as a cohesive project
+
+## Page 1: Executive_Project Summary
+
+- The Execuive Project Summary is delivered via the ***executive_project_summary*** file
+
+#### Purpose:
+
+- Business context, goals, and scope
+
+#### What it does (Deliverables)
+
+- Introduces the fictional stakeholder : (Marianne McGuineys) and company (Farmy & Foods).
+- Describes the problem : manual mildew detection is time-consuming and not scalable.
+- Lays out why an ML solution is appropriate.
+- Defines two business requirements:
+  - Visual differentiation between healthy and mildew-infected leaves.
+  - Predictive classification using ML.
+- Points to the Kaggle dataset used.
+- Summarizes dashboard sections like Cherry Leaves Visualizer, Mildew Detection, etc.
+
+### How it complements others
+
+- Sets the foundation for the hypothesis validation.
+- Tells the business story that is answered with the technical notebooks.
+- Describes what users will see in other modules (e.g., checkboxes, model output).
+
+
+## Page 2: Cherry_leaves_Visualizer
+
+- The page is is delivered via the ***cherry_leaves_visualizer*** file
+
+### Purpose:
+
+- Visual study **(addresses Business Requirement 1)**
+
+### What it does (Delievarables)
+
+- Provides an **interactive UI** to explore the dataset visually:
+  - Shows **average and standard** deviation images.
+  - Displays **pixel-wise differences** between average healthy and mildew-infected leaves.
+  - Allows users to generate image montages for visual inspection by class.
+- Uses ***matplotlib, seaborn, and PIL*** for image processing.
+- Fully interactive using Streamlit checkboxes, selectbox, and image(). 
+
+### How it complements others.
+
+- Provides the visual evidence to support the hypothesis that mildew is visually identifiable.
+- Directly supports the **first business requirement** (visual differentiation).
+- The ***"Findings"*** section in project_hypothesis_validation refers to this output.
+- Data used here is the same dataset used in training the ML model.
+
+
+## Page 3: Mildew_Powdery_Detection
+
+- The page is is delivered via the ***mildew_powdery_detection*** file
+
+### Purpose: 
+
+- Real-time prediction interface **(addresses Business Requirement 2)**
+
+### What it does
+
+- Loads a trained CNN model (mildew_detection_model.h5) from disk.
+- Accepts user-uploaded images (.jpg, .jpeg, .png).
+- Predicts if the image is Healthy or Powdery Mildew using the model.
+- Displays:
+- Uploaded image.
+- Predicted class and confidence.
+- Table of results.
+- CSV download of results.
+- Uses TensorFlow, PIL, NumPy, and Streamlit components.
+
+### How it complements others
+
+- Implements Business Requirement 2.
+- Provides a live demonstration of the model's predictive power.
+- Prediction functionality validates the claim in project_hypothesis_validation that mildew is "computationally" detectable.
+- Connects user interaction to the model's training results seen in project_performance_metrics.
+
+## Page 4: Project_Hypothesis_Validation
+
+- The page is is delivered via the ***project_hypothesis_validation*** file
+
+### Purpose: 
+
+- Summarize and validate the project hypothesis
+
+### What it does
+
+- Defines the core hypothesis: mildew is detectable both visually and via ML.
+- Explains:
+  - Business requirements.
+  - ML pipeline used (data prep, augmentation, CNN design, evaluation).
+  - Visual study outcomes.
+  - Model training and test accuracy.
+- Includes a clear conclusion and next steps:
+  - Scaling.
+  - Deployment.
+  - Generalizability to other crops.
+
+### How it complements others
+
+- Connects the visual output from cherry_leaves_visualizer.py and the model results from mildew_powdery_detection.py.
+- Ties all technical and business findings together to validate project success.
+- Serves as the bridge between executive overview and technical proof.
+
+## Page 5: Project_Performance_Metrics
+
+- The page is is delivered via the ***project_performance_metrics*** file
+
+### Purpose:
+
+- Visualize model learning and evaluation
+
+### What it does
+
+- Loads model training curves (accuracy and loss PNGs).
+- Reads saved evaluation metrics (evaluation.pkl).
+- Displays:
+  - Training vs. validation accuracy/loss.
+  - Test accuracy/loss as a DataFrame.
+- Flags potential overfitting.
+- Explains model generalization performance.
+
+### How it complements others
+
+- Reinforces the findings stated in project_hypothesis_validation.py.
+- Helps non-technical users visualize what “good model performance” looks like.
+- Supports trust in the predictions shown in mildew_powdery_detection.py.
+
+# Streamlit APP Dashboard - Screenshots 
+
+- Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their requirement 1 and 2 
+
+- This is the first page and captures the executive sumamry for the client . This is for non technical users.
+
+![streamlit_navigation_panel1](Readme.doc/streamlit_navigation_panel1.png)
+
+- This is the page 2 and captures the Requirements 1
+  
+![streamlit_page2_cherry_leaves_visualizer](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
+
+- ![average_variability](Readme.doc/average_variability.png)
+
+- This is the page 3 and captures the Requirements 2  
+
+ ![streamlit_page3_mildew_powdery_detection](Readme.doc/streamlit_page3_mildew_powdery_detection.png)
+
+- Healthy Leaf
+
+ ![healthy_leaf](Readme.doc/healthy_leaf.png)
+
+- Mildew Powdery - Fungal Infection
+  
+![fungal_powdery](Readme.doc/fungal_powdery.png)
+
+- This is the page 4 and outlines the project hypothesis 
+  
+![streamlit_project_hypothesis]](Readme.doc/streamlit_project_hypothesis.png)
+
+- This is last page ans show the ML model performance 
+
+![streamlit_project_performance_metrics](Readme.doc/streamlit_project_performance_metrics.png)
+
+
+
+
+
+# UNFIXED BUGS
+
+## Heroku Deployment
 
 - A lot of issues was encountered while working on this project.
-- The Walkthrough project and code is built on python 2.8 and the code institite template had 3.12 as the latest version.
-- While deploying to Heroku, the slug was over 500 MB which prevented from deploying on Heroku with all relevant files and libraries.
-- In order to deploy on Heroku many deletions were made 
-  - streamlit==1.40.2
-  - Pillow==10.0.1
-  - numpy==1.26.1
-  - tensorflow-cpu==2.16.1
-  - matplotlib==3.8.0
-  - pandas==2.1.1
-  - seaborn==0.13.2
+  - The Walkthrough project and code is built on python 2.8 and the code institite template had 3.12 as the latest version.
+  - While deploying to Heroku, the slug was over 500 MB which prevented from deploying on Heroku with all relevant files and libraries.
+  - In order to deploy on Heroku many deletions were made 
+    - streamlit==1.40.2
+    - Pillow==10.0.1
+    - numpy==1.26.1
+    - tensorflow-cpu==2.16.1
+    - matplotlib==3.8.0
+    - pandas==2.1.1
+    - seaborn==0.13.2
   - The input directories which include the test, train and validation sets were deleted to reduce the slug file size. 
-  - As such the Heroku app deployed did not have the input/validation files which are need to display some features on the streamlit app. 
-- When this issue was raised to the tutor, they acknolwedged this problem and requested to change to Render. 
+  - As such the Heroku app deployed did not have the input/validation files which are essential to display features on the streamlit app. 
+- On rasining this issue through tutor support, the problem was acknowledged as a "Known Issue"
+  - Tutor support suggested moving to a different platform called "Render".
 - A screenshot of the issue with Heroku.
   
-  ![heroku_slug_fail](Readme.doc/heroku_slug_fail.png) 
+![heroku_slug_fail](Readme.doc/heroku_slug_fail.png) 
 
--The Deployment on Render also presented numerous challenges, as it kepy throwing errors for Pandas and other packages.
-- An example of the error below 
+## Render Deployment
+
+- Deployment on Render also presented numerous challenges, as it kept throwing errors for Pandas and other packages.
+- An example of the error is pasted below 
   - We used a lower version of Numpy than what was in my original requirements.txt file , deleted Procfile and runtime.txt files and used a Python version of 3..8.12 as outlined in the code institue deployment guide.
 
 - Render Deploy issues 
   
   ![render_deploy_issue](Readme.doc/render_deploy_issue.png)
-   
+  
 
+# PROJECT DEPLOYMENT
 
-## Deployment
-
-- The Heroku site has a limitation of 500MB on the slug file. 
-- Code Institute also suggests using an alternate site called Render.com https://dashboard.render.com/web/new
+- As stated earlier Heroku site has a limitation of 500MB on the slug file. 
+- Code Institute suggests using an alternate site called Render.com https://dashboard.render.com/web/new
 - Deployment guide for Render https://code-institute-students.github.io/deployment-docs/42-pp5-pa/
 - Project deployment link at Render https://project5-mildew-detection-in-cherry-5ijr.onrender.com
 
 
 
-## Main Data Analysis and Machine Learning Libraries
-
-- All details are captured under relevant sections of each jupyter notebook 
-- Python Data Analysis Packakges: Captured in the Requirements.txt file and imported inside the Jupyter notebooks
-  - numpy==1.26.1
-  - pandas==2.1.1
-  - matplotlib==3.8.0
-  - seaborn==0.13.2
-  - plotly==5.17.0
-  - Pillow==10.0.1
-  - streamlit==1.40.2
-  - joblib==1.4.2
-  - scikit-learn==1.3.1
-  - tensorflow-cpu==2.16.1
-  - keras>=3.0.0
- -  Convolutional neural network (CNN) model are more modern but computational heavy update to Artificial Neural Networks. 
-    -  A Convolution Neural Netowrk is commonly used for image processing and computer vision.
-    -  As our dataset was images , this was a natural choice.
-    -  Deep Neural Networks have two properties namely **BIAS** and **BACKPROPOGATIO** due to which we do not have to spend a lot of time doing feature engineering for data. 
-      - These two functions are used in TensorFlow as **OPTIMIZER** and **LOSS FUNCTIONS**.
-    - Tensor flow a popular Python package uses the Sequential Model function to model Neural Networks using different layers was deployed.
-    - Due to its effectiveness and syntax simplicity, another neural network library, known as Keras, was adopted as the interface for TensorFlow from version 2.0.
-    - A Dropout layer is a regularization layer and is used to reduce the chance of **overfitting** the neural network.
-    - TensofrFlow Loass and Optimzation 
-    - Convolution Model Screenshot
-  
-![cnn_model](Readme.doc/cnn_model.png)
-  
-  ## Model creation
-
-  
-  - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew. 
-  - This will also help us populate the **Page 3: mildew_powdery_detection** of our Streamlit Dashboard App.
-  - When need to Predict a Category , we use the ML task of Classification.
-  - In our project, we need to classify images, which is unstructured , so we use Convolutional Neural Network.
-  - Convolutional Neural Network which is more modern and computational heavy,an update to the artificial neural networks.
-  - The convolutional neural network consists of convolutional layers before the deep neural layers.
-  - Deep learning just refers to many layers of nodes inside a Convolutional Neural Network (CNN).     
-  - The image augmentation process makes our model ready for the real-time implementation of the systems.
-  - It also increases our model performance while training, via increasing the number of different combinations of pattern images in the memory of the computer.
-  - We will use the python library TesnorFlow to build and train our own deep learning model for this project.
-   - In our project, our CNN model will learn from the **dominant feature** of the pre-labeled cell images of our cherry leaves data
-   - In our project, the dominant feature is the **Mildew** in the cherry leaf image.
-   - The human behavior of **“learning from our mistakes”** inspires the optimizer and loss function mechanisms in deep neural networks.
-   - Scientists have used this principle and mathematically created an algorithm to reduce error by using **optimizers and loss functions**. 
-  -Futher details are captured under each section in the Modelling and Evaluation Jupyter Notebook.
-
-  # Streamlit APP Dashboard
-
-  Screenshots of the five pages created on the Streamlit App Dashboard for the client as per their requirement 1 and 2 
-
-  - This is the first page and captures the executive sumamry for the client . This is for non technical users.
-    
- ![streamlit_navigation_panel1](Readme.doc/streamlit_navigation_panel1.png)
-
-  - This is the page 2 and captures the Requirements 1
-  
- ![streamlit_page2_cherry_leaves_visualizer](Readme.doc/streamlit_page2_cherry_leaves_visualizer.png)
-
-  - ![average_variability](Readme.doc/average_variability.png)
-
-  - This is the page 3 and captures the Requirements 2  
-
- ![streamlit_page3_mildew_powdery_detection](Readme.doc/streamlit_page3_mildew_powdery_detection.png)
-
-  - Healthy Leaf
-
-   ![healthy_leaf](Readme.doc/healthy_leaf.png)
-
-   - Mildew Powdery - Fungal Infection
-  
-   ![fungal_powdery](Readme.doc/fungal_powdery.png)
-
-  - This is the page 4 and outlines the project hypothesis 
-  
- ![streamlit_project_hypothesis]](Readme.doc/streamlit_project_hypothesis.png)
-
-  - This is last page ans show the ML model performance 
-   
- ![streamlit_project_performance_metrics](Readme.doc/streamlit_project_performance_metrics.png)
 
 
 ## Credits
