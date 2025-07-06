@@ -4,7 +4,7 @@ import streamlit as st
 def project_hypothesis_validation():
     st.title("Project Summary: Mildew Detection in Cherry Leaves")
 
-    st.markdown("## 🧪 Project Hypothesis")
+    st.markdown("## Project Hypothesis")
     st.write(
         """
         The central hypothesis of this project is:
@@ -27,7 +27,7 @@ def project_hypothesis_validation():
         """
     )
 
-    st.markdown("## 🔍 Validation Approach")
+    st.markdown("## Validation Approach")
     st.write(
         """
         To test the hypothesis, we designed a robust ML pipeline using CNNs.
@@ -55,7 +55,7 @@ def project_hypothesis_validation():
         """
     )
 
-    st.markdown("## 📊 Findings")
+    st.markdown("## Findings")
 
     st.subheader("Cherry Leaves Visualizer (Requirement 1)")
     st.write(
@@ -79,7 +79,7 @@ def project_hypothesis_validation():
         """
     )
 
-    st.markdown("## ✅ Conclusion")
+    st.markdown("## Conclusion")
     st.write(
         """
         The project successfully validates the initial hypothesis:
@@ -95,7 +95,7 @@ def project_hypothesis_validation():
         """
     )
 
-    st.markdown("## 🔁 Next Steps")
+    st.markdown("## Next Steps")
     st.write(
         """
         - Dataset Expansion: Improve model robustness by collecting more
