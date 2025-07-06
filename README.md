@@ -253,7 +253,7 @@ The hypothesis is validated if:
 
 - TensorFlow Loss and Optimzation 
   
-![tensorflow_loss_optimizer](Readme.doc\tensorflow_loss_optimizer.png)
+![tensorflow_loss_optimizer](Readme.doc/tensorflow_loss_optimizer.png)
 
 ## INFRASTRUCTURE TOOLS AND TECHNOLOGIES
 

@@ -9,7 +9,7 @@ def project_hypothesis_validation():
         """
         The central hypothesis of this project is:
 
-        > Powdery mildew infection in cherry leaves can be visually and
+        Powdery mildew infection in cherry leaves can be visually and
         computationally detected using a machine learning model trained on
         leaf images.
 
